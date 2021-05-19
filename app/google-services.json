@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "444780173953",
+    "project_id": "junkman-33694",
+    "storage_bucket": "junkman-33694.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444780173953:android:b4eb3e2cff2ba101128b80",
+        "android_client_info": {
+          "package_name": "id.junkman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444780173953-5pr14q95f5651v0ouf5d55k27i86bcvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.junkman",
+            "certificate_hash": "2fc6f3a47a7bd543b9ce19fdd05369186ec1c7f6"
+          }
+        },
+        {
+          "client_id": "444780173953-p378ks8vntl6t796a8lbgt6ltkjjlunc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTv7Kh6INlsynS2ZphWuCfh8TYnzDOIYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444780173953-p378ks8vntl6t796a8lbgt6ltkjjlunc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
