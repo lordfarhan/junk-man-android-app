@@ -1,4 +1,17 @@
 <resources>
   <string name="app_name">JunkMan</string>
   <string name="splash_screen">Splash Screen</string>
+
+  <string name="app_intro_skip_button">LEWATI</string>
+  <string name="app_intro_next_button">LANJUT</string>
+  <string name="app_intro_back_button">KEMBALI</string>
+  <string name="app_intro_done_button">SELESAI</string>
+  <string name="app_intro_image_content_description">Icon</string>
+
+  <string name="title">JunkMan</string>
+  <string name="desc1">Kamu punya barang bekas yang menumpuk dan ingin menjualnya?</string>
+  <string name="desc2">Silahkan scan barang bekas anda dan tunggu JunkMan kami datang!</string>
+  <string name="desc3">Anda juga dapat membeli barang bekas yang anda butuhkan pada toko kami</string>
+  <string name="desc4">Selamat Datang di JunkMan! Solusi Barang Bekas mu!</string>
+  <string name="welcome">Welcome!</string>
 </resources>
