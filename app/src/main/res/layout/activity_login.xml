@@ -6,4 +6,25 @@
   android:layout_height="match_parent"
   tools:context=".ui.LoginActivity">
 
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView_actionLogin"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/default_button_height"
+    android:layout_margin="@dimen/default_space"
+    app:cardCornerRadius="@dimen/default_card_corner_radius"
+    app:cardElevation="@dimen/default_card_elevation"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      style="@style/Theme.JunkMan.Button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="Google" />
+
+  </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
