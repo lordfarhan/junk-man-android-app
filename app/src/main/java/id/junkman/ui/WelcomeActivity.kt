@@ -74,6 +74,7 @@ class WelcomeActivity: AppIntro2() {
 
   private fun goToMain() {
     startActivity(Intent(this, LoginActivity::class.java))
+    finish()
   }
 
   override fun onSkipPressed(currentFragment: Fragment?) {
