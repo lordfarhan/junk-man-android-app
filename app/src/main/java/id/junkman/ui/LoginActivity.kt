@@ -67,10 +67,10 @@ class LoginActivity : AppCompatActivity() {
           val isNew = task.result?.additionalUserInfo?.isNewUser
           // Sign in success, update UI with the signed-in user's information
           currentUser?.let { user ->
-            if (isNew != null && isNew == true) {
+            if (isNew != null && isNew == true)
               storeUserToFirestore(user)
-            }
-            redirectToLanding(user)
+            else
+              redirectToLanding(user)
           }
         } else {
           // If sign in fails, display a message to the user.
@@ -97,22 +97,24 @@ class LoginActivity : AppCompatActivity() {
   }
 
   private fun redirectToLanding(user: FirebaseUser) {
-    Toast.makeText(this, user.displayName, Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, "Welcome " + user.displayName, Toast.LENGTH_SHORT).show()
     startActivity(Intent(this, LandingActivity::class.java))
     finish()
   }
 
   private fun storeUserToFirestore(user: FirebaseUser) {
-    val documentReference = store.collection("User").document(user.uid)
-    val userInfo = hashMapOf(
+    val data = hashMapOf(
       "Name" to user.displayName,
       "Email" to user.email,
       "Phone" to user.phoneNumber,
-      "Photo" to user.photoUrl,
       "Address" to "",
       "Role" to "Customer"
     )
-    documentReference.set(userInfo)
+
+    store.collection("Users").document(user.uid).set(data);
+    Toast.makeText(this, "Registering user...", Toast.LENGTH_SHORT).show()
+
+    redirectToLanding(user)
   }
 
   companion object {
