@@ -6,6 +6,16 @@
   android:layout_height="match_parent"
   tools:context=".ui.LoginActivity">
 
+  <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/app_name"
+    android:src="@drawable/logo"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
   <androidx.cardview.widget.CardView
     android:id="@+id/cardView_actionLogin"
     android:layout_width="match_parent"
@@ -15,15 +25,23 @@
     app:cardElevation="@dimen/default_card_elevation"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageView
+      android:layout_width="24dp"
+      android:layout_height="24dp"
+      android:layout_gravity="center_vertical"
+      android:layout_marginStart="@dimen/default_space"
+      android:contentDescription="Google"
+      android:src="@drawable/ic_google_logo"
+      tools:ignore="HardcodedText" />
 
     <TextView
       style="@style/Theme.JunkMan.Button"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
-      android:text="Google" />
+      android:text="Login dengan Google" />
 
   </androidx.cardview.widget.CardView>
 

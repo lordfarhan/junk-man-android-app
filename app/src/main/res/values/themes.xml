@@ -12,6 +12,7 @@
     <!-- Status bar color. -->
     <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     <!-- Customize your theme here. -->
+    <item name="fontFamily">@font/cabin_semi_bold</item>
   </style>
 
   <style name="Theme.JunkMan.NoActionBar" parent="Theme.JunkMan">
@@ -20,14 +21,15 @@
   </style>
 
   <style name="Theme.JunkMan.Button" parent="TextAppearance.AppCompat.Button">
-
+    <item name="fontFamily">@font/cabin_semi_bold</item>
+    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="Theme.JunkMan.Title" parent="TextAppearance.AppCompat.Title">
-
+    <item name="fontFamily">@font/cabin_semi_bold</item>
   </style>
 
   <style name="Theme.JunkMan.Caption" parent="TextAppearance.AppCompat.Caption">
-
+    <item name="fontFamily">@font/cabin_regular</item>
   </style>
 </resources>
