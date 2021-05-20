@@ -4,6 +4,32 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@color/soft_grey"
   tools:context=".ui.LandingActivity">
+
+  <androidx.viewpager2.widget.ViewPager2
+    android:id="@+id/viewPager2_landing"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toTopOf="@id/spaceNavigationView_landing"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <henry.co.bottom.navigtion.SpaceNavigationView
+    android:id="@+id/spaceNavigationView_landing"
+    style="@style/Theme.JunkMan.Caption"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    app:active_centre_button_icon_color="@color/white"
+    app:active_item_color="@color/green_500"
+    app:centre_button_color="@color/green_500"
+    app:centre_button_icon="@drawable/ic_baseline_qr_code_scanner_24"
+    app:inactive_centre_button_icon_color="@color/white"
+    app:inactive_item_color="@color/grey"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:space_background_color="@color/white"
+    app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+    app:space_item_icon_size="@dimen/space_item_icon_default_size"
+    app:space_item_text_size="@dimen/space_item_text_default_size" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
