@@ -50,9 +50,10 @@ dependencies {
     //custom ui
     implementation 'com.github.chihung93:Space-Navigation-V2:1.1'
 
-    //firebase auth
+    //google service and firebase libraries
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'

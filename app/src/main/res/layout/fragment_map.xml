@@ -5,9 +5,10 @@
   android:layout_height="match_parent"
   tools:context=".ui.map.MapFragment">
 
-  <TextView
+  <fragment
+    android:id="@+id/fragment_map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="Hello" />
+    android:layout_height="match_parent" />
 
 </FrameLayout>
