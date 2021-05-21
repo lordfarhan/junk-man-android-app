@@ -14,4 +14,11 @@
   <string name="desc3">Anda juga dapat membeli barang bekas yang anda butuhkan pada toko kami</string>
   <string name="desc4">Selamat Datang di JunkMan! Solusi Barang Bekas mu!</string>
   <string name="welcome">Welcome!</string>
+
+  <string name="card">Card Slider</string>
+  <string name="card1">One Man\'s Trash is Another Man\'s Treasure.</string>
+  <string name="card2">Recycling Turns Things Into Other Things. Which is Like Magic!</string>
+  <string name="card3">Use It Up, Wear It Out, Make It Do, or Do Without.</string>
+  <string name="monthly_reward">Monthly Reward</string>
+
 </resources>

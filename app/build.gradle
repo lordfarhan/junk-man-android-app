@@ -63,6 +63,9 @@ dependencies {
     //AndroidX Capable version for welcome activity
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
 
+    //CardSlider
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
     //testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
