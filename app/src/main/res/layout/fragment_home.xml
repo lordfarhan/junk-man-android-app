@@ -18,11 +18,84 @@
       app:iss_period="3000"/>
 
     <TextView
+      android:id="@+id/txt_monthly"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@+id/imageSlider"
       android:padding="16dp"
       android:text="@string/monthly_reward"
       android:textSize="16sp"/>
+
+    <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:layout_margin="8dp"
+      android:id="@+id/cv_root"
+      app:cardCornerRadius="6dp"
+      app:cardElevation="3dp"
+      android:layout_below="@id/txt_monthly">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+          android:id="@+id/txt_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          tools:text="@string/monthly_text"/>
+
+        <ProgressBar
+          android:id="@+id/progressBar"
+          android:layout_width="match_parent"
+          android:layout_height="10dp"
+          android:paddingTop="8dp"
+          android:progress="2"
+          android:max="10"
+          android:progressTint="@color/green_500"
+          style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+          app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <TextView
+          android:id="@+id/txt_min"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="5dp"
+          android:textStyle="bold"
+          android:text="@string/min_value"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/progressBar"/>
+
+        <TextView
+          android:id="@+id/txt_value"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="5dp"
+          android:textColor="@color/green_500"
+          android:textStyle="bold"
+          android:textSize="16sp"
+          android:text="@string/txt_value"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="@id/progressBar"
+          app:layout_constraintTop_toBottomOf="@id/progressBar"/>
+
+        <TextView
+          android:id="@+id/txt_max"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="5dp"
+          android:textStyle="bold"
+          android:text="@string/max_value"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/progressBar"/>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
   </RelativeLayout>
 </ScrollView>

@@ -28,8 +28,12 @@ class HomeFragment : Fragment() {
     poster.add(SlideModel(R.drawable.card1, getString(R.string.card1), ScaleTypes.CENTER_CROP))
     poster.add(SlideModel(R.drawable.card2, getString(R.string.card2), ScaleTypes.CENTER_CROP))
     poster.add(SlideModel(R.drawable.card3, getString(R.string.card3), ScaleTypes.CENTER_CROP))
-
     binding.imageSlider.setImageList(poster)
+
+/*    binding.progressBar.max = 100
+    binding.progressBar.progress = 0*/
+    binding.txtTitle.text = getString(R.string.monthly_text)
+
     return binding.root
   }
 

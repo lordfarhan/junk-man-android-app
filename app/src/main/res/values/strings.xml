@@ -19,7 +19,13 @@
   <string name="card1">One Man\'s Trash is Another Man\'s Treasure.</string>
   <string name="card2">Recycling Turns Things Into Other Things. Which is Like Magic!</string>
   <string name="card3">Use It Up, Wear It Out, Make It Do, or Do Without.</string>
+
   <string name="monthly_reward">Monthly Reward</string>
+  <string name="monthly_text">Yuk, selesaikan misimu untuk mendapatkan reward bulan ini!</string>
+  <string name="max_value">10 Kg</string>
+  <string name="min_value">2 Kg</string>
+  <string name="txt_value">Value</string>
+
   <string name="google_maps_key">AIzaSyDxIwCaq5xHjX4WVHFtpGIFZOHKXx_Xu4w</string>
 
 </resources>
