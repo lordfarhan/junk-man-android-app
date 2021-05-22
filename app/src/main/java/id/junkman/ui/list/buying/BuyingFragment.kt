@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import id.junkman.databinding.FragmentBuyingBinding
+import id.junkman.ui.list.bottomdialog.BottomSheetDialogFragment
 
 class BuyingFragment : Fragment() {
   private var _binding: FragmentBuyingBinding? = null
@@ -18,6 +20,17 @@ class BuyingFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+    //show bottom dialog harusnya pas nge klik item nya
+    showBottomDialog()
+    binding.progressBar.visibility = View.INVISIBLE
+  }
+
+  private fun showBottomDialog() {
+    val myDialog = BottomSheetDialogFragment()
+    val fm: FragmentManager? = fragmentManager
+    if (fm != null) {
+      myDialog.show(fm, "test")
+    }
   }
 
   override fun onDestroyView() {
