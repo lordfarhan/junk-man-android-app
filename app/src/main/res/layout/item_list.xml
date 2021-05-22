@@ -1,0 +1,79 @@
+<androidx.cardview.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="horizontal"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="16dp"
+  android:layout_margin="8dp"
+  android:id="@+id/cv_root"
+  app:cardCornerRadius="6dp"
+  app:cardElevation="3dp">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <ImageView
+      android:id="@+id/img_stuff"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:scaleType="centerCrop"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:contentDescription="@string/app_intro_image_content_description" />
+
+    <TextView
+      android:id="@+id/txt_stuff"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="12dp"
+      app:layout_constraintStart_toEndOf="@id/img_stuff"
+      app:layout_constraintTop_toTopOf="@id/img_stuff"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      tools:text="@string/title" />
+
+    <TextView
+      android:id="@+id/txt_barcode"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="@+id/txt_stuff"
+      app:layout_constraintTop_toBottomOf="@id/txt_stuff"
+      tools:text="@string/barcode" />
+
+    <ImageView
+      android:id="@+id/ic_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:src="@drawable/ic_eye"
+      app:layout_constraintTop_toTopOf="@id/txt_barcode"
+      app:layout_constraintBottom_toBottomOf="@id/txt_barcode"
+      app:layout_constraintStart_toEndOf="@id/txt_barcode"
+      android:contentDescription="@string/ic_eye" />
+
+    <TextView
+      android:id="@+id/txt_status"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@id/txt_stuff"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/txt_stuff"
+      tools:text="@string/status" />
+
+    <TextView
+      android:id="@+id/txt_status_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@id/ic_date"
+      app:layout_constraintEnd_toEndOf="@id/txt_status"
+      app:layout_constraintTop_toTopOf="@+id/ic_date"
+      tools:text="@string/status_wait" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -28,4 +28,15 @@
 
   <string name="google_maps_key">AIzaSyDxIwCaq5xHjX4WVHFtpGIFZOHKXx_Xu4w</string>
 
+  <string name="list_title">List Transaksi</string>
+  <string name="sell">Penjualan</string>
+  <string name="buy">Pembelian</string>
+  <string name="ic_eye">Icon Eye</string>
+  <string name="barcode">Lihat Barcode</string>
+  <string name="status">Status</string>
+  <string name="status_wait">Menunggu</string>
+  <string name="status_progress">Dikonfirmasi</string>
+  <string name="status_done">Sukses</string>
+  <string name="status_failed">Batal</string>
+
 </resources>

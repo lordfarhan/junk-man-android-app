@@ -1,11 +1,15 @@
 package id.junkman.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import henry.co.bottom.navigtion.SpaceItem
 import henry.co.bottom.navigtion.SpaceOnClickListener
 import id.junkman.R
 import id.junkman.databinding.ActivityLandingBinding
+import id.junkman.ui.list.ListTransactionActivity
 
 
 class LandingActivity : AppCompatActivity() {
@@ -48,6 +52,22 @@ class LandingActivity : AppCompatActivity() {
         }
 
       })
+    }
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    menuInflater.inflate(R.menu.menu_list, menu)
+    return super.onCreateOptionsMenu(menu)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    return when (item.itemId) {
+      R.id.menu_list -> {
+        val intent = Intent(this, ListTransactionActivity::class.java)
+        startActivity(intent)
+        true
+      }
+      else -> super.onOptionsItemSelected(item)
     }
   }
 
