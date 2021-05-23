@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ui.list.selling.BottomDialogSellingFragment"
+  android:gravity="bottom">
+
+  <ImageButton
+    android:id="@+id/btn_close_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:src="@drawable/ic_close"
+    android:backgroundTint="@color/white"
+    android:contentDescription="@string/image" />
+
+  <TextView
+    android:id="@+id/txt_barcode"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:layout_centerHorizontal="true"
+    android:padding="16dp"
+    android:text="@string/barcode"
+    android:layout_below="@id/btn_close_dialog" />
+
+  <ImageView
+    android:id="@+id/img_barcode"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/txt_barcode"
+    android:layout_marginBottom="20dp"
+    android:src="@drawable/logo"
+    android:contentDescription="@string/image" />
+
+  <TextView
+    android:id="@+id/txt_cancel_order"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/txt_cancel_order"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:padding="12dp"
+    android:layout_marginBottom="24dp"
+    android:layout_marginStart="16dp"
+    android:layout_below="@id/img_barcode"/>
+
+  <Button
+    android:id="@+id/btn_cancel_sell"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@id/txt_cancel_order"
+    android:layout_alignBottom="@id/txt_cancel_order"
+    android:layout_alignParentEnd="true"
+    android:layout_toEndOf="@+id/txt_cancel_order"
+    android:layout_marginEnd="16dp"
+    android:text="@string/btn_cancel_order"
+    android:textSize="12sp"/>
+
+</RelativeLayout>
