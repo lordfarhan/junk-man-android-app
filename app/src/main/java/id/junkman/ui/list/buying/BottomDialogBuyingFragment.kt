@@ -21,7 +21,7 @@ open class BottomDialogBuyingFragment : BottomSheetDialogFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    binding.btnCancelOrder.setOnClickListener {
+    binding.btnCancelBuying.setOnClickListener {
       //status berubah jadi BATAL
       Toast.makeText(requireContext(), "Pesanan Dibatalkan", Toast.LENGTH_SHORT).show()
       dismiss()

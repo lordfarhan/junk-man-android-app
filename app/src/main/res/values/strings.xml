@@ -44,4 +44,14 @@
   <string name="btn_cancel_order">Batalkan Pesanan</string>
   <string name="image">Image / Icon</string>
 
+  <string name="title_buying">Deskripsi Pesanan</string>
+  <string name="name_stuff">Nama Barang:</string>
+  <string name="txt_name_Stuff">Botol Plastik</string>
+  <string name="code_stuff">Kode Pesanan:</string>
+  <string name="txt_code_stuff">BP0101</string>
+  <string name="price_stuff">Total Harga:</string>
+  <string name="price_stuff_rp">Rp</string>
+  <string name="txt_price_stuff">5000</string>
+
+
 </resources>
