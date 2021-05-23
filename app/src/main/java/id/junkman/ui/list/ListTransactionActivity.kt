@@ -43,8 +43,8 @@ class ListTransactionActivity : AppCompatActivity() {
   companion object {
     @StringRes
     private val TAB_TITLES = intArrayOf(
-      R.string.buy,
-      R.string.sell
+      R.string.sell,
+      R.string.buy
     )
   }
 }

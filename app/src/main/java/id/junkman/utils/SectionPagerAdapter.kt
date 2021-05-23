@@ -11,8 +11,8 @@ class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(ac
 
   override fun createFragment(position: Int): Fragment {
     return when (position) {
-      0 -> BuyingFragment()
-      else -> SellingFragment()
+      0 -> SellingFragment()
+      else -> BuyingFragment()
     }
   }
 }
