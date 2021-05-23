@@ -1,4 +1,4 @@
-package id.junkman.ui.list.bottomdialog
+package id.junkman.ui.list.buying
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import id.junkman.databinding.FragmentBottomSheetDialogBinding
+import id.junkman.databinding.FragmentBottomDialogBuyingBinding
 
-open class BottomSheetDialogFragment : BottomSheetDialogFragment() {
+open class BottomDialogBuyingFragment : BottomSheetDialogFragment() {
 
-  private var _binding: FragmentBottomSheetDialogBinding? = null
+  private var _binding: FragmentBottomDialogBuyingBinding? = null
   private val binding get() = _binding!!
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-    _binding = FragmentBottomSheetDialogBinding.inflate(inflater, container, false)
+    _binding = FragmentBottomDialogBuyingBinding.inflate(inflater, container, false)
     return binding.root
   }
 

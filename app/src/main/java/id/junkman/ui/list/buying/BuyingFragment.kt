@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import id.junkman.databinding.FragmentBuyingBinding
-import id.junkman.ui.list.bottomdialog.BottomSheetDialogFragment
 
 class BuyingFragment : Fragment() {
   private var _binding: FragmentBuyingBinding? = null
@@ -26,10 +25,10 @@ class BuyingFragment : Fragment() {
   }
 
   private fun showBottomDialog() {
-    val myDialog = BottomSheetDialogFragment()
+    val myDialog = BottomDialogBuyingFragment()
     val fm: FragmentManager? = fragmentManager
     if (fm != null) {
-      myDialog.show(fm, "test")
+      myDialog.show(fm, "buying")
     }
   }
 
