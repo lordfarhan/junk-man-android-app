@@ -39,6 +39,7 @@
   <string name="status_done">Sukses</string>
   <string name="status_failed">Batal</string>
 
+  <string name="open_barcode">Lihat Barcode</string>
   <string name="barcode">Tunjukkan barcode dibawah ini ke JunkMan, yaa!</string>
   <string name="txt_cancel_order">Berubah pikiran?</string>
   <string name="btn_cancel_order">Batalkan Pesanan</string>

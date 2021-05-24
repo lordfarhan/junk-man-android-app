@@ -43,7 +43,7 @@
       android:layout_height="wrap_content"
       app:layout_constraintStart_toStartOf="@+id/txt_stuff"
       app:layout_constraintTop_toBottomOf="@id/txt_stuff"
-      tools:text="@string/barcode" />
+      tools:text="@string/open_barcode" />
 
     <ImageView
       android:id="@+id/ic_date"
