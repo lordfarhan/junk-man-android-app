@@ -74,7 +74,7 @@
       android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/rv_follower"
+      android:id="@+id/rv_history_trans"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="8dp"
