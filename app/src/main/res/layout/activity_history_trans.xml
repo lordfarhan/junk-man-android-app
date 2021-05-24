@@ -1,8 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context=".ui.profile.historytrans.HistoryTransActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/img_profile"
+      android:layout_width="120dp"
+      android:layout_height="120dp"
+      android:layout_marginTop="50dp"
+      app:civ_border_color="@color/green_500"
+      app:civ_border_width="5dp"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/ic_baseline_person_24"
+      app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+      android:id="@+id/txt_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/img_profile"
+      android:layout_marginTop="16dp"
+      android:text="@string/txt_name_user"
+      android:textStyle="bold"
+      android:textSize="18sp"
+      android:gravity="center_horizontal"/>
+
+    <TextView
+      android:id="@+id/txt_username"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/txt_name"
+      android:text="@string/txt_username"
+      android:textSize="16sp"
+      android:gravity="center_horizontal"/>
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/cv_saldo"
+      android:layout_width="100dp"
+      android:layout_height="30dp"
+      android:padding="16dp"
+      android:layout_margin="8dp"
+      app:cardCornerRadius="6dp"
+      app:cardElevation="3dp"
+      android:layout_below="@id/txt_username"
+      android:layout_centerHorizontal="true">
+
+      <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="@string/saldo"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+      android:id="@+id/history_trans"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/cv_saldo"
+      android:layout_marginTop="30dp"
+      android:layout_marginStart="20dp"
+      android:text="@string/history_trans"
+      android:textSize="16sp"
+      android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rv_follower"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="8dp"
+      android:layout_below="@id/history_trans"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:listitem="@layout/item_history_trans"/>
+
+  </RelativeLayout>
+</ScrollView>

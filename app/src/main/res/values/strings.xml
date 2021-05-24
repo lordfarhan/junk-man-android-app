@@ -64,5 +64,8 @@
   <string name="save">Simpan</string>
   <string name="address">Alamat</string>
   <string name="saldo">Saldo</string>
+  <string name="type_trans_income">Pemasukan</string>
+  <string name="type_trans_outcome">Pengeluaran</string>
+  <string name="trans_date">20/05/2021</string>
 
 </resources>
