@@ -53,5 +53,16 @@
   <string name="price_stuff_rp">Rp</string>
   <string name="txt_price_stuff">5000</string>
 
+  <string name="txt_name_user">Name</string>
+  <string name="txt_username">username</string>
+  <string name="edit_profil">Edit Profil</string>
+  <string name="history_trans">Riwayat Keuangan</string>
+  <string name="withdraw">Tarik Tunai</string>
+  <string name="logout">Logout</string>
+  <string name="input_name">Masukkan Nama</string>
+  <string name="input_address">Masukkan Alamat</string>
+  <string name="save">Simpan</string>
+  <string name="address">Alamat</string>
+  <string name="saldo">Saldo</string>
 
 </resources>

@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".ui.profile.ProfileFragment">
+  tools:context=".ui.profile.editprofile.EditProfileActivity">
 
   <RelativeLayout
     android:layout_width="match_parent"
@@ -41,66 +41,62 @@
       android:textSize="16sp"
       android:gravity="center_horizontal"/>
 
-    <androidx.cardview.widget.CardView
-      android:id="@+id/cv_saldo"
-      android:layout_width="100dp"
-      android:layout_height="30dp"
-      android:padding="16dp"
-      android:layout_margin="8dp"
-      app:cardCornerRadius="6dp"
-      app:cardElevation="3dp"
+    <TextView
+      android:id="@+id/edit_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:layout_below="@id/txt_username"
-      android:layout_centerHorizontal="true">
-
-      <TextView
-        android:id="@+id/txt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:text="@string/saldo"/>
-    </androidx.cardview.widget.CardView>
-
-    <Button
-      android:id="@+id/btn_edit_profile"
-      android:layout_width="200dp"
-      android:layout_height="match_parent"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@id/cv_saldo"
       android:layout_marginTop="50dp"
-      android:text="@string/edit_profil"
-      android:backgroundTint="@color/yellow_500"/>
+      android:layout_marginStart="20dp"
+      android:text="@string/txt_name_user"
+      android:textSize="16sp"
+      android:textStyle="bold" />
 
-    <Button
-      android:id="@+id/btn_history_trans"
-      android:layout_width="200dp"
-      android:layout_height="match_parent"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@id/btn_edit_profile"
-      android:layout_marginTop="8dp"
-      android:text="@string/history_trans"
-      android:backgroundTint="@color/yellow_500"/>
+    <EditText
+      android:id="@+id/txt_edit_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text"
+      android:imeOptions="actionDone"
+      android:layout_below="@id/edit_name"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      android:textSize="16sp"
+      android:autofillHints="@string/input_name"
+      android:labelFor="@id/txt_edit_name"/>
 
-    <Button
-      android:id="@+id/btn_withdraw"
-      android:layout_width="200dp"
-      android:layout_height="match_parent"
-      android:layout_centerHorizontal="true"
-      android:layout_below="@id/btn_history_trans"
-      android:layout_marginTop="8dp"
-      android:text="@string/withdraw"
-      android:backgroundTint="@color/yellow_500"/>
+    <TextView
+      android:id="@+id/edit_address"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/txt_edit_name"
+      android:layout_marginTop="20dp"
+      android:layout_marginStart="20dp"
+      android:text="@string/address"
+      android:textSize="16sp"
+      android:textStyle="bold" />
+
+    <EditText
+      android:id="@+id/txt_edit_address"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text"
+      android:imeOptions="actionDone"
+      android:layout_below="@id/edit_address"
+      android:layout_marginStart="20dp"
+      android:layout_marginEnd="20dp"
+      android:textSize="16sp"
+      android:autofillHints="@string/input_address"
+      android:labelFor="@id/txt_edit_address"/>
 
     <Button
       android:id="@+id/btn_logout"
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
       android:layout_centerHorizontal="true"
-      android:layout_below="@id/btn_withdraw"
+      android:layout_below="@id/txt_edit_address"
       android:layout_marginTop="50dp"
-      android:text="@string/logout"
+      android:text="@string/save"
       android:backgroundTint="@color/green_500"/>
   </RelativeLayout>
-
 </ScrollView>
