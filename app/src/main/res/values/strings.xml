@@ -52,7 +52,7 @@
   <string name="txt_code_stuff">BP0101</string>
   <string name="price_stuff">Total Harga:</string>
   <string name="price_stuff_rp">Rp</string>
-  <string name="txt_price_stuff">5000</string>
+  <string name="txt_price_stuff">5.000</string>
 
   <string name="txt_name_user">Name</string>
   <string name="txt_username">username</string>
@@ -64,9 +64,18 @@
   <string name="input_address">Masukkan Alamat</string>
   <string name="save">Simpan</string>
   <string name="address">Alamat</string>
-  <string name="saldo">Saldo</string>
+  <string name="saldo">SALDO</string>
   <string name="type_trans_income">Pemasukan</string>
   <string name="type_trans_outcome">Pengeluaran</string>
   <string name="trans_date">20/05/2021</string>
+  <string name="amount_trans">Pilih Jumlah Penarikan :</string>
+  <string name="amount_trans_50">Rp 50.000</string>
+  <string name="amount_trans_100">Rp 100.000</string>
+  <string name="amount_trans_200">Rp 200.000</string>
+  <string name="bank_name">Nama Bank</string>
+  <string name="input_bank_name">Masukkan Nama Bank</string>
+  <string name="bank_number">No. Rekening</string>
+  <string name="input_bank_number">Masukkan No. Rekening</string>
+  <string name="send">AMBIL</string>
 
 </resources>
