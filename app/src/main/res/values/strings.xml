@@ -94,5 +94,7 @@
   <string name="price_weight">Harga/Kg</string>
   <string name="txt_stuff_quantity">2</string>
   <string name="shopping_cart">Keranjang Belanja</string>
+  <string name="note_bottom_cart">*Transaksi dilakukan dengan COD</string>
+  <string name="amount_cart">Jumlah Pembelian</string>
 
 </resources>

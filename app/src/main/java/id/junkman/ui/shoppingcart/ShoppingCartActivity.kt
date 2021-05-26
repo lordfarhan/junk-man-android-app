@@ -14,6 +14,10 @@ class ShoppingCartActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     setActionBar()
+
+    binding.btnOrder.setOnClickListener {
+      showBottomDialog()
+    }
   }
 
   private fun setActionBar() {
@@ -21,5 +25,10 @@ class ShoppingCartActivity : AppCompatActivity() {
       setDisplayHomeAsUpEnabled(true)
       title = resources.getString(R.string.shopping_cart)
     }
+  }
+
+  private fun showBottomDialog() {
+    val bottomCartFragment = BottomCartFragment()
+    bottomCartFragment.show(supportFragmentManager, "withdraw")
   }
 }
