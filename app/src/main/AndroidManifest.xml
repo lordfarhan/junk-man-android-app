@@ -11,7 +11,12 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.JunkMan">
-    <activity android:name=".ui.profile.withdraw.WithdrawActivity"/>
+    <activity android:name=".ui.shoppingcart.ShoppingCartActivity">
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".ui.LandingActivity" />
+    </activity>
+    <activity android:name=".ui.profile.withdraw.WithdrawActivity" />
     <activity android:name=".ui.profile.historytrans.HistoryTransActivity" />
     <activity android:name=".ui.profile.editprofile.EditProfileActivity" />
     <activity android:name=".ui.list.ListTransactionActivity">

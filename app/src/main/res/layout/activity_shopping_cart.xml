@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  android:layout_height="fill_parent"
+  android:layout_width="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:context=".ui.shoppingcart.ShoppingCartActivity">
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_cart"
+    android:layout_above="@id/btn_order"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:listitem="@layout/item_shopping_cart"/>
+
+  <Button
+    android:id="@+id/btn_order"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:text="@string/order"
+    android:backgroundTint="@color/green_500"/>
+
+  <ProgressBar
+    android:id="@+id/progress_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"/>
+
+</RelativeLayout>

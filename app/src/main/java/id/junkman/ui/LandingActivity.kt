@@ -10,6 +10,7 @@ import henry.co.bottom.navigtion.SpaceOnClickListener
 import id.junkman.R
 import id.junkman.databinding.ActivityLandingBinding
 import id.junkman.ui.list.ListTransactionActivity
+import id.junkman.ui.shoppingcart.ShoppingCartActivity
 
 
 class LandingActivity : AppCompatActivity() {
@@ -64,6 +65,11 @@ class LandingActivity : AppCompatActivity() {
     return when (item.itemId) {
       R.id.menu_list -> {
         val intent = Intent(this, ListTransactionActivity::class.java)
+        startActivity(intent)
+        true
+      }
+      R.id.menu_cart -> {
+        val intent = Intent(this, ShoppingCartActivity::class.java)
         startActivity(intent)
         true
       }
