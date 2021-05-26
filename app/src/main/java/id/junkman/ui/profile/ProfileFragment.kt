@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import id.junkman.R
 import id.junkman.databinding.FragmentProfileBinding
+import id.junkman.ui.LoginActivity
 import id.junkman.ui.profile.editprofile.EditProfileActivity
 import id.junkman.ui.profile.historytrans.HistoryTransActivity
 import id.junkman.ui.profile.withdraw.WithdrawActivity
@@ -41,6 +42,12 @@ class ProfileFragment : Fragment() {
     }
     binding.btnWithdraw.setOnClickListener {
       val intent = Intent(requireContext(), WithdrawActivity::class.java)
+      startActivity(intent)
+    }
+
+    binding.btnLogout.setOnClickListener {
+      //user logout
+      val intent = Intent(requireContext(), LoginActivity::class.java)
       startActivity(intent)
     }
   }
