@@ -78,4 +78,11 @@
   <string name="input_bank_number">Masukkan No. Rekening</string>
   <string name="send">AMBIL</string>
 
+  <string name="amount_withdraw">Jumlah Penarikan</string>
+  <string name="amount_admin">Biaya Administrasi</string>
+  <string name="amount_admin_5">Rp 5.000</string>
+  <string name="amount_total">Total Biaya</string>
+  <string name="amount_total_55">Rp 55.000</string>
+  <string name="confirm">KONFIRMASI</string>
+
 </resources>
