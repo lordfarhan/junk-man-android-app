@@ -90,7 +90,7 @@
       android:labelFor="@id/txt_edit_address"/>
 
     <Button
-      android:id="@+id/btn_logout"
+      android:id="@+id/btn_save_profile"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_centerHorizontal="true"
