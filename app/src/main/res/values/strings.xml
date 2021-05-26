@@ -85,4 +85,9 @@
   <string name="amount_total_55">Rp 55.000</string>
   <string name="confirm">KONFIRMASI</string>
 
+  <string name="floating_button">floating button</string>
+  <string name="stuff_price_kg">Rp 5.000/Kg</string>
+  <string name="price">Harga</string>
+  <string name="stuff_weight_bottle">300ml</string>
+
 </resources>

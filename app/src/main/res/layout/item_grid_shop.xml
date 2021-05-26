@@ -1,0 +1,76 @@
+<androidx.cardview.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="horizontal"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="16dp"
+  android:layout_margin="8dp"
+  android:id="@+id/cv_root"
+  app:cardCornerRadius="6dp"
+  app:cardElevation="3dp">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+      android:id="@+id/img_item_photo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:scaleType="centerCrop"
+      android:layout_centerHorizontal="true"
+      tools:src="@tools:sample/avatars"
+      android:contentDescription="@string/image" />
+
+    <TextView
+      android:id="@+id/stuff_bottle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/img_item_photo"
+      android:layout_marginTop="8dp"
+      android:text="@string/txt_name_Stuff"
+      android:textSize="16sp"/>
+
+    <TextView
+      android:id="@+id/stuff_weight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/stuff_bottle"
+      android:text="@string/stuff_weight_bottle"
+      android:textSize="12sp"/>
+
+    <TextView
+      android:id="@+id/lbl_stuff_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/stuff_weight"
+      android:layout_marginTop="12dp"
+      android:text="@string/price"
+      android:textSize="12sp"/>
+
+    <TextView
+      android:id="@+id/stuff_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/lbl_stuff_price"
+      android:text="@string/stuff_price_kg"
+      android:textSize="16sp"/>
+  </RelativeLayout>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab_add_stuff"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/floating_button"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_gravity="end|bottom"
+    app:fabSize="mini"
+    android:src="@drawable/ic_add"
+    android:backgroundTint="@color/green_200"/>
+
+</androidx.cardview.widget.CardView>

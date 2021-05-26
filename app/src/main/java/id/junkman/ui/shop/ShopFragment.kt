@@ -7,20 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.junkman.R
+import id.junkman.databinding.FragmentSellingBinding
+import id.junkman.databinding.FragmentShopBinding
 
 class ShopFragment : Fragment() {
-
-  companion object {
-    fun newInstance() = ShopFragment()
-  }
-
   private lateinit var viewModel: ShopViewModel
 
-  override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
-    return inflater.inflate(R.layout.fragment_shop, container, false)
+  private var _binding: FragmentShopBinding? = null
+  private val binding get() = _binding!!
+
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    _binding = FragmentShopBinding.inflate(inflater, container, false)
+    return binding.root
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
   }
 
   override fun onActivityCreated(savedInstanceState: Bundle?) {
