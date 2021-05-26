@@ -6,8 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import id.junkman.R
-import id.junkman.databinding.FragmentSellingBinding
 import id.junkman.databinding.FragmentShopBinding
 
 class ShopFragment : Fragment() {
@@ -15,6 +13,10 @@ class ShopFragment : Fragment() {
 
   private var _binding: FragmentShopBinding? = null
   private val binding get() = _binding!!
+
+  companion object {
+    fun newInstance() = ShopFragment()
+  }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
     _binding = FragmentShopBinding.inflate(inflater, container, false)
