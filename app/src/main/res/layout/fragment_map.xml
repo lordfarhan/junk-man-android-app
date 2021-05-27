@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
@@ -11,4 +12,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  <ProgressBar
+    android:id="@+id/progressBar_map"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout_mapBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_transparent_80"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="144dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.cardview.widget.CardView
+      android:id="@+id/view_lineBottomSheet"
+      android:layout_width="180dp"
+      android:layout_height="@dimen/small_space"
+      android:layout_alignParentEnd="true"
+      android:layout_margin="16dp"
+      app:cardBackgroundColor="@color/soft_grey"
+      app:cardCornerRadius="@dimen/tiny_space"
+      app:cardElevation="@dimen/no_space"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView_offices"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/view_lineBottomSheet" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
