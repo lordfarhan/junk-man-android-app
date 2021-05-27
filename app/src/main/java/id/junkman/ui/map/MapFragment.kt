@@ -74,7 +74,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
   override fun onMapReady(googleMap: GoogleMap) {
     binding.progressBarMap.visible()
     val offices: ArrayList<Office> = ArrayList()
-    store.collection("Office")
+    store.collection("Offices")
       .get()
       .addOnSuccessListener { documents ->
         binding.progressBarMap.gone()
