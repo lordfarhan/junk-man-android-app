@@ -104,11 +104,11 @@ class LoginActivity : AppCompatActivity() {
 
   private fun storeUserToFirestore(user: FirebaseUser) {
     val data = hashMapOf(
-      "Name" to user.displayName,
-      "Email" to user.email,
-      "Phone" to user.phoneNumber,
-      "Address" to "",
-      "Role" to "Customer"
+      "name" to user.displayName,
+      "email" to user.email,
+      "phone" to user.phoneNumber,
+      "address" to "",
+      "role" to "customer"
     )
 
     store.collection("Users").document(user.uid).set(data);

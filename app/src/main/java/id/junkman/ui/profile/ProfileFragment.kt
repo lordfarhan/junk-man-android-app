@@ -9,9 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import id.junkman.databinding.FragmentProfileBinding
+import id.junkman.model.User
 import id.junkman.ui.LoginActivity
 import id.junkman.ui.profile.editprofile.EditProfileActivity
 import id.junkman.ui.profile.historytrans.HistoryTransActivity
@@ -27,6 +30,7 @@ class ProfileFragment : Fragment() {
   private var _binding: FragmentProfileBinding? = null
   private val binding get() = _binding!!
   private lateinit var auth: FirebaseAuth
+  private lateinit var store: FirebaseFirestore
 
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -41,8 +45,17 @@ class ProfileFragment : Fragment() {
     super.onViewCreated(view, savedInstanceState)
 
     auth = Firebase.auth
+    store = Firebase.firestore
+
     auth.currentUser?.let {
-      binding.txtName.text = it.displayName
+      store.collection("Users").document(it.uid)
+        .get()
+        .addOnCompleteListener { task ->
+          if (task.isSuccessful) {
+            val user = task.result?.toObject(User::class.java)
+            binding.txtName.text = user?.name
+          }
+        }
       binding.txtUsername.text = it.email
       it.photoUrl?.let { url ->
         Picasso.get().load(url).into(binding.imgProfile)
