@@ -89,5 +89,12 @@
   <string name="stuff_price_kg">Rp 5.000/Kg</string>
   <string name="price">Harga</string>
   <string name="stuff_weight_bottle">300ml</string>
+  <string name="button">button</string>
+  <string name="order">PESAN</string>
+  <string name="price_weight">Harga/Kg</string>
+  <string name="txt_stuff_quantity">2</string>
+  <string name="shopping_cart">Keranjang Belanja</string>
+  <string name="note_bottom_cart">*Transaksi dilakukan dengan COD</string>
+  <string name="amount_cart">Jumlah Pembelian</string>
 
 </resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:gravity="bottom">
+
+  <ImageButton
+    android:id="@+id/btn_close_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:src="@drawable/ic_close"
+    android:backgroundTint="@color/white"
+    android:contentDescription="@string/image" />
+
+  <TextView
+    android:id="@+id/shopping_cart"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:layout_centerHorizontal="true"
+    android:padding="16dp"
+    android:text="@string/buy"
+    android:layout_below="@id/btn_close_dialog"/>
+
+  <!--    =============================================================================-->
+  <TableLayout
+    android:id="@+id/table_cart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="16dp"
+    android:layout_below="@id/shopping_cart"
+    android:layout_alignParentEnd="true"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
+
+    <TableRow
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp">
+
+      <TextView
+        android:id="@+id/amount_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:text="@string/amount_cart"
+        android:textSize="16sp"/>
+
+      <TextView
+        android:id="@+id/txt_amount_cart"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:text="@string/amount_trans_50"
+        android:textAlignment="textEnd"
+        android:textSize="16sp" />
+    </TableRow>
+
+    <TableRow
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+      <TextView
+        android:id="@+id/amount_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:text="@string/amount_admin"
+        android:textSize="16sp"/>
+
+      <TextView
+        android:id="@+id/txt_amount_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:text="@string/amount_admin_5"
+        android:textSize="16sp" />
+    </TableRow>
+
+    <TableRow
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="20dp">
+
+      <TextView
+        android:id="@+id/amount_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:text="@string/amount_total"
+        android:textSize="16sp"/>
+
+      <TextView
+        android:id="@+id/txt_amount_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:text="@string/amount_total_55"
+        android:textSize="16sp" />
+    </TableRow>
+  </TableLayout>
+  <!--    =============================================================================-->
+
+  <TextView
+    android:id="@+id/note_bottom_cart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAlignment="textStart"
+    android:text="@string/note_bottom_cart"
+    android:textSize="16sp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_below="@id/table_cart"/>
+
+  <Button
+    android:id="@+id/btn_confirm_cart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/note_bottom_cart"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginBottom="20dp"
+    android:text="@string/confirm"
+    android:textSize="12sp"/>
+
+</RelativeLayout>
