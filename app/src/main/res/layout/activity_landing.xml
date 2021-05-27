@@ -11,14 +11,15 @@
     android:id="@+id/viewPager2_landing"
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    app:layout_constraintBottom_toTopOf="@id/spaceNavigationView_landing"
+    android:layout_marginBottom="50dp"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <henry.co.bottom.navigtion.SpaceNavigationView
     android:id="@+id/spaceNavigationView_landing"
     style="@style/Theme.JunkMan.Caption"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="72dp"
     android:layout_gravity="bottom"
     app:active_centre_button_icon_color="@color/white"
     app:active_item_color="@color/green_500"
