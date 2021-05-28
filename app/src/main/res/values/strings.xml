@@ -97,4 +97,11 @@
   <string name="note_bottom_cart">*Transaksi dilakukan dengan COD</string>
   <string name="amount_cart">Jumlah Pembelian</string>
 
+  <string name="name_stuff_doesnt_match">Jika nama barang yang tampil tidak sesuai, silahkan masukkan nama barang di bawah ini :</string>
+  <string name="equal">:</string>
+  <string name="kg">Kg</string>
+  <string name="est_price">Estimasi Pendapatan</string>
+  <string name="weight_predict">Estimasi Berat (per Kg)</string>
+  <string name="price_stuff_info">Informasi Harga (per Kg)</string>
+
 </resources>
