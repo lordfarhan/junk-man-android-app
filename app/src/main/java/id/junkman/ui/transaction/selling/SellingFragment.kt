@@ -1,4 +1,4 @@
-package id.junkman.ui.list.selling
+package id.junkman.ui.transaction.selling
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import id.junkman.databinding.FragmentSellingBinding
-import id.junkman.ui.list.buying.BottomDialogBuyingFragment
 
 class SellingFragment : Fragment() {
   private var _binding: FragmentSellingBinding? = null

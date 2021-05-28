@@ -9,7 +9,7 @@ import henry.co.bottom.navigtion.SpaceItem
 import henry.co.bottom.navigtion.SpaceOnClickListener
 import id.junkman.R
 import id.junkman.databinding.ActivityLandingBinding
-import id.junkman.ui.list.ListTransactionActivity
+import id.junkman.ui.transaction.TransactionActivity
 import id.junkman.ui.shoppingcart.ShoppingCartActivity
 
 
@@ -64,7 +64,7 @@ class LandingActivity : AppCompatActivity() {
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     return when (item.itemId) {
       R.id.menu_list -> {
-        val intent = Intent(this, ListTransactionActivity::class.java)
+        val intent = Intent(this, TransactionActivity::class.java)
         startActivity(intent)
         true
       }

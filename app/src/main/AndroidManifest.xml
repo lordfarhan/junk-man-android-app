@@ -19,7 +19,7 @@
     <activity android:name=".ui.profile.withdraw.WithdrawActivity" />
     <activity android:name=".ui.profile.historytrans.HistoryTransActivity" />
     <activity android:name=".ui.profile.editprofile.EditProfileActivity" />
-    <activity android:name=".ui.list.ListTransactionActivity">
+    <activity android:name=".ui.transaction.TransactionActivity">
       <meta-data
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".ui.LandingActivity" />

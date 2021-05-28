@@ -1,4 +1,4 @@
-package id.junkman.ui.list.buying
+package id.junkman.ui.transaction.buying
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

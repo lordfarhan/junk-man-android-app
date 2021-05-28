@@ -1,15 +1,12 @@
-package id.junkman.ui.list.selling
+package id.junkman.ui.transaction.selling
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import id.junkman.R
 import id.junkman.databinding.FragmentBottomDialogSellingBinding
-import id.junkman.databinding.FragmentSellingBinding
 
 class BottomDialogSellingFragment : BottomSheetDialogFragment() {
 

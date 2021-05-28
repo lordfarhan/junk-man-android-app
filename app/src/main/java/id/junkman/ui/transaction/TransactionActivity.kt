@@ -1,4 +1,4 @@
-package id.junkman.ui.list
+package id.junkman.ui.transaction
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +10,7 @@ import id.junkman.R
 import id.junkman.databinding.ActivityListTransactionBinding
 import id.junkman.utils.SectionPagerAdapter
 
-class ListTransactionActivity : AppCompatActivity() {
+class TransactionActivity : AppCompatActivity() {
   private lateinit var binding: ActivityListTransactionBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {

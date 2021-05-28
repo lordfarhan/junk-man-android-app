@@ -1,0 +1,74 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/cv_root"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_margin="@dimen/medium_space"
+  android:orientation="horizontal"
+  app:cardCornerRadius="@dimen/default_card_corner_radius"
+  app:cardElevation="@dimen/default_card_elevation">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:id="@+id/img_item_photo"
+      android:layout_width="match_parent"
+      android:layout_height="140dp"
+      android:layout_centerHorizontal="true"
+      android:contentDescription="@string/image"
+      android:scaleType="centerCrop"
+      tools:src="@tools:sample/avatars" />
+
+    <TextView
+      android:id="@+id/stuff_name"
+      style="@style/Theme.JunkMan.Title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/img_item_photo"
+      android:layout_marginStart="@dimen/medium_space"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="@dimen/medium_space"
+      android:ellipsize="end"
+      android:lines="2"
+      android:maxLines="2"
+      android:text="@string/txt_name_Stuff"
+      android:textSize="16sp" />
+
+    <TextView
+      android:id="@+id/stuff_stock"
+      style="@style/Theme.JunkMan.Caption"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/stuff_name"
+      android:layout_marginStart="@dimen/medium_space"
+      android:layout_marginEnd="@dimen/medium_space"
+      android:text="@string/stuff_weight_bottle"
+      android:textSize="12sp" />
+
+    <TextView
+      android:id="@+id/stuff_price"
+      style="@style/Theme.JunkMan.Title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/stuff_stock"
+      android:layout_margin="@dimen/medium_space"
+      android:text="@string/stuff_price_kg"
+      android:textSize="16sp" />
+  </RelativeLayout>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab_add_stuff"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end|bottom"
+    android:backgroundTint="@color/green_200"
+    android:contentDescription="@string/floating_button"
+    android:src="@drawable/ic_add"
+    app:fabSize="mini"
+    app:tint="@color/white" />
+
+</androidx.cardview.widget.CardView>

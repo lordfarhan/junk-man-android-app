@@ -8,6 +8,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 import id.junkman.R
 import id.junkman.databinding.ActivityEditProfileBinding
 import id.junkman.model.User
@@ -37,6 +38,7 @@ class EditProfileActivity : AppCompatActivity() {
             binding.txtEditAddress.setText(user?.address)
           }
         }
+      Picasso.get().load(it.photoUrl).into(binding.imgProfile)
       binding.txtUsername.text = it.email
     }
 
