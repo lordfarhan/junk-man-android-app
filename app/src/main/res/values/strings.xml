@@ -103,5 +103,6 @@
   <string name="est_price">Estimasi Pendapatan</string>
   <string name="weight_predict">Estimasi Berat (per Kg)</string>
   <string name="price_stuff_info">Informasi Harga (per Kg)</string>
+  <string name="title_junkman">Junkman</string>
 
 </resources>
