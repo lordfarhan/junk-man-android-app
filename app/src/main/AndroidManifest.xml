@@ -17,6 +17,7 @@
         android:value=".ui.LandingActivity" />
     </activity>
     <activity android:name=".ui.profile.withdraw.WithdrawActivity" />
+    <activity android:name=".ui.scan.OrderActivity" />
     <activity android:name=".ui.profile.historytrans.HistoryTransActivity" />
     <activity android:name=".ui.profile.editprofile.EditProfileActivity" />
     <activity android:name=".ui.transaction.TransactionActivity">
