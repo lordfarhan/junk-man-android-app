@@ -1,5 +1,6 @@
 package id.junkman.ui.shop
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.junkman.databinding.FragmentShopBinding
 import id.junkman.model.Product
+import id.junkman.ui.shoppingcart.ShoppingCartActivity
 import id.junkman.utils.gone
 import id.junkman.utils.visible
 
@@ -26,11 +28,7 @@ class ShopFragment : Fragment() {
     fun newInstance() = ShopFragment()
   }
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
     _binding = FragmentShopBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -65,5 +63,14 @@ class ShopFragment : Fragment() {
     binding.rvShop.layoutManager = GridLayoutManager(requireActivity(), 2)
     binding.rvShop.adapter = adapter
     adapter.submitList(products)
+
+    adapter.onItemClick = { selectedData -> setSelectedProduct(selectedData) }
+  }
+
+  private fun setSelectedProduct(product: Product) {
+    val intent = Intent(requireActivity(), ShoppingCartActivity::class.java).apply {
+      putExtra(ShoppingCartActivity.PRODUCT, product)
+    }
+    startActivity(intent)
   }
 }
