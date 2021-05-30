@@ -27,6 +27,9 @@ class AppRepository constructor(
   fun addItems(items: ArrayList<CartItem>) =
     appExecutors.diskIO().execute { localDataSource.addItem(items) }
 
+  fun updateItemQuantity(id: String, quantity: Int) =
+    appExecutors.diskIO().execute { localDataSource.updateItemQuantity(id, quantity) }
+
   fun removeItem(id: String) =
     appExecutors.diskIO().execute { localDataSource.deleteItemById(id) }
 

@@ -12,7 +12,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.junkman.databinding.FragmentShopBinding
 import id.junkman.model.Product
-import id.junkman.ui.shoppingcart.ShoppingCartActivity
+import id.junkman.ui.cart.CartActivity
 import id.junkman.utils.gone
 import id.junkman.utils.visible
 
@@ -28,7 +28,11 @@ class ShopFragment : Fragment() {
     fun newInstance() = ShopFragment()
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
     _binding = FragmentShopBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -68,8 +72,8 @@ class ShopFragment : Fragment() {
   }
 
   private fun setSelectedProduct(product: Product) {
-    val intent = Intent(requireActivity(), ShoppingCartActivity::class.java).apply {
-      putExtra(ShoppingCartActivity.PRODUCT, product)
+    val intent = Intent(requireActivity(), CartActivity::class.java).apply {
+      putExtra(CartActivity.PRODUCT, product)
     }
     startActivity(intent)
   }

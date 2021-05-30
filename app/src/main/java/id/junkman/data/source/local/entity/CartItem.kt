@@ -17,7 +17,7 @@ data class CartItem(
   var name: String? = "",
   var price: Double? = 0.0,
   var image: String? = "",
-  var stock: Int? = 0,
-  var quantity: Int? = 0,
+  var stock: Int = 0,
+  var quantity: Int = 0,
   var unit: String? = ""
 ) : Parcelable

@@ -22,4 +22,8 @@ class LocalDataSource constructor(private val dao: AppDao) {
   fun deleteItemById(id: String) {
     dao.deleteItemById(id)
   }
+
+  fun updateItemQuantity(id: String, quantity: Int) {
+    dao.updateItemQuantity(id, quantity)
+  }
 }
