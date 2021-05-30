@@ -4,14 +4,14 @@
   android:layout_width="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  tools:context=".ui.shoppingcart.ShoppingCartActivity">
+  tools:context=".ui.cart.CartActivity">
 
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycler_cart"
     android:layout_above="@id/btn_order"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    tools:listitem="@layout/item_shopping_cart"/>
+    tools:listitem="@layout/item_cart"/>
 
   <Button
     android:id="@+id/btn_order"

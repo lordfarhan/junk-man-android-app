@@ -1,4 +1,4 @@
-package id.junkman.ui.shoppingcart
+package id.junkman.ui.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
