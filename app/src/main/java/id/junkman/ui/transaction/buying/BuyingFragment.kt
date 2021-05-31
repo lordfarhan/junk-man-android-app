@@ -12,6 +12,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.junkman.databinding.FragmentBuyingBinding
 import id.junkman.model.Product
+import id.junkman.model.Transaction
 import id.junkman.utils.gone
 import id.junkman.utils.visible
 
@@ -21,7 +22,7 @@ class BuyingFragment : Fragment() {
 
   private lateinit var store: FirebaseFirestore
   private lateinit var adapter: BuyingAdapter
-  private lateinit var products: ArrayList<Product>
+  private lateinit var transactions: ArrayList<Transaction>
 
   companion object {
     fun newInstance() = BuyingFragment()
@@ -41,16 +42,16 @@ class BuyingFragment : Fragment() {
 
   private fun showListBuying() {
     binding.progressBar.visible()
-    products = ArrayList()
-    store.collection("Products")
+    transactions = ArrayList()
+    store.collection("Transactions")
       .get()
       .addOnSuccessListener { documents ->
         binding.progressBar.gone()
         for ((i, document) in documents.withIndex()) {
           if (document.exists()) {
-            val product: Product = document.toObject(Product::class.java)
-            product.id = document.id
-            products.add(product)
+            val transaction: Transaction = document.toObject(Transaction::class.java)
+            transaction.id = document.id
+            transactions.add(transaction)
           }
         }
         populateProducts()
@@ -58,7 +59,7 @@ class BuyingFragment : Fragment() {
   }
 
   private fun populateProducts() {
-    adapter = BuyingAdapter(products)
+    adapter = BuyingAdapter(transactions)
     binding.rvBuying.layoutManager = LinearLayoutManager(requireActivity())
     binding.rvBuying.adapter = adapter
 

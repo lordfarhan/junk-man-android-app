@@ -6,13 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import id.junkman.R
 import id.junkman.databinding.ItemTransactionBinding
-import id.junkman.model.Product
+import id.junkman.model.Transaction
 
 class BuyingAdapter: RecyclerView.Adapter<BuyingAdapter.ViewHolder> {
-  var onItemClick: ((Product) -> Unit)? = null
-  private var list = mutableListOf<Product>()
+  var onItemClick: ((Transaction) -> Unit)? = null
+  private var list = mutableListOf<Transaction>()
 
-  constructor(list: ArrayList<Product>) {
+  constructor(list: ArrayList<Transaction>) {
     this.list = list
   }
 
@@ -29,15 +29,15 @@ class BuyingAdapter: RecyclerView.Adapter<BuyingAdapter.ViewHolder> {
 
   inner class ViewHolder(private val binding: ItemTransactionBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(product: Product) {
-      Picasso.get().load(product.image).into(binding.imgStuff)
+    fun bind(transaction: Transaction) {
+      Picasso.get().load(transaction.image).into(binding.imgStuff)
       binding.apply {
-        txtStuff.text = product.name
-        txtStatusValue.text //harusnya ini refers ke status dari transaksi
+        txtStuff.text = transaction.name
+        txtStatusValue.text = transaction.status
         txtStatus.setText(R.string.status)
         txtBarcode.setText(R.string.open_barcode)
         cvRoot.setOnClickListener {
-          onItemClick?.invoke(product)
+          onItemClick?.invoke(transaction)
         }
       }
     }
