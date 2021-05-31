@@ -27,7 +27,8 @@
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".ui.LandingActivity" />
     </activity>
-    <activity android:name=".ui.WelcomeActivity" />
+    <activity android:name=".ui.WelcomeActivity"
+      android:theme="@style/Theme.JunkMan.NoActionBar"/>
     <activity android:name=".ui.LoginActivity" />
     <activity android:name=".ui.LandingActivity" />
     <activity

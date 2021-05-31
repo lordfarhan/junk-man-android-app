@@ -2,9 +2,11 @@ package id.junkman.ui.shop
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
@@ -28,11 +30,7 @@ class ShopFragment : Fragment() {
     fun newInstance() = ShopFragment()
   }
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
     _binding = FragmentShopBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -42,6 +40,8 @@ class ShopFragment : Fragment() {
     store = Firebase.firestore
 
     requestProducts()
+    productSearching()
+
   }
 
   private fun requestProducts() {
@@ -63,10 +63,9 @@ class ShopFragment : Fragment() {
   }
 
   private fun populateProducts() {
-    adapter = ShopAdapter()
+    adapter = ShopAdapter(products)
     binding.rvShop.layoutManager = GridLayoutManager(requireActivity(), 2)
     binding.rvShop.adapter = adapter
-    adapter.submitList(products)
 
     adapter.onItemClick = { selectedData -> setSelectedProduct(selectedData) }
   }
@@ -76,5 +75,24 @@ class ShopFragment : Fragment() {
       putExtra(CartActivity.PRODUCT, product)
     }
     startActivity(intent)
+  }
+
+  private fun productSearching() {
+    binding.searchViewShop.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+      override fun onQueryTextSubmit(query: String?): Boolean {
+        if (query != null) {
+          if (query.isNotEmpty()) {
+            Log.d("SEARCH_QUERY", query)
+            adapter.filter.filter(query)
+          }
+        }
+        return false
+      }
+
+      override fun onQueryTextChange(newText: String): Boolean {
+        adapter.filter.filter(newText)
+        return false
+      }
+    })
   }
 }
