@@ -9,9 +9,9 @@ import henry.co.bottom.navigtion.SpaceItem
 import henry.co.bottom.navigtion.SpaceOnClickListener
 import id.junkman.R
 import id.junkman.databinding.ActivityLandingBinding
-import id.junkman.ui.transaction.TransactionActivity
 import id.junkman.ui.cart.CartActivity
-
+import id.junkman.ui.sell.SellActivity
+import id.junkman.ui.transaction.TransactionActivity
 
 class LandingActivity : AppCompatActivity() {
   private lateinit var binding: ActivityLandingBinding
@@ -43,6 +43,7 @@ class LandingActivity : AppCompatActivity() {
 
       spaceNavigationViewLanding.setSpaceOnClickListener(object : SpaceOnClickListener {
         override fun onCentreButtonClick() {
+          startActivity(Intent(this@LandingActivity, SellActivity::class.java))
         }
 
         override fun onItemClick(itemIndex: Int, itemName: String) {

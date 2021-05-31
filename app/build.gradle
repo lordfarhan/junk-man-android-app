@@ -36,14 +36,18 @@ android {
         jvmTarget = '1.8'
     }
     ndkVersion '20.0.5594570'
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
     buildFeatures {
         viewBinding true
+        mlModelBinding true
     }
     dynamicFeatures = [':junkman']
 }
 
 dependencies {
-
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
     implementation 'androidx.core:core-ktx:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
@@ -93,6 +97,11 @@ dependencies {
     //koin
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
+
+    //tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
 
     //testing
     testImplementation 'junit:junit:4.13.2'
