@@ -1,19 +1,18 @@
-package id.junkman.ui.scan
+package id.junkman.ui.sell.confirmation
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import id.junkman.databinding.ActivityOrderBinding
-import id.junkman.ui.profile.editprofile.EditProfileActivity
+import androidx.appcompat.app.AppCompatActivity
+import id.junkman.databinding.ActivitySellConfirmationBinding
 import id.junkman.ui.transaction.TransactionActivity
 
-class OrderActivity : AppCompatActivity() {
-  private lateinit var binding: ActivityOrderBinding
+class SellConfirmationActivity : AppCompatActivity() {
+  private lateinit var binding: ActivitySellConfirmationBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    binding = ActivityOrderBinding.inflate(layoutInflater)
+    binding = ActivitySellConfirmationBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
     binding.btnOrderJunkman.setOnClickListener {
