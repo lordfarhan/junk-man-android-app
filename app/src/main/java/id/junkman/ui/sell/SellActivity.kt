@@ -32,6 +32,10 @@ class SellActivity : AppCompatActivity() {
       intent.type = "image/*"
       startActivityForResult(intent, 100)
     }
+    binding.button3.setOnClickListener {
+      val intents=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+      startActivityForResult(intents, 101)
+    }
 
     binding.button2.setOnClickListener {
       val resized: Bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
@@ -57,9 +61,15 @@ class SellActivity : AppCompatActivity() {
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
-    binding.imageView.setImageURI(data?.data)
-    val uri: Uri? = data?.data
-    bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
+    if(requestCode==100){
+      binding.imageView.setImageURI(data?.data)
+      var uri: Uri?= data?.data
+      bitmap=MediaStore.Images.Media.getBitmap(this.contentResolver,uri)
+    }
+    else if(requestCode==101){
+      bitmap = data?.extras?.get("data") as Bitmap
+      binding.imageView.setImageBitmap(bitmap)
+    }
   }
 
   private fun getMax(arr: FloatArray): Int {

@@ -41,7 +41,17 @@
     android:textSize="20sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+  <Button
+    android:id="@+id/button3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Take Camera"
+    app:layout_constraintBottom_toTopOf="@+id/textView"
+    app:layout_constraintEnd_toStartOf="@+id/button2"
+    app:layout_constraintHorizontal_bias="0.484"
+    app:layout_constraintStart_toEndOf="@+id/button"
+    app:layout_constraintTop_toBottomOf="@+id/imageView"
+    app:layout_constraintVertical_bias="0.0" />
   <TextView
     android:id="@+id/textView"
     android:layout_width="276dp"
