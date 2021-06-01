@@ -10,65 +10,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-      android:id="@+id/img_profile"
-      android:layout_width="120dp"
-      android:layout_height="120dp"
-      android:layout_marginTop="50dp"
-      app:civ_border_color="@color/green_500"
-      app:civ_border_width="5dp"
-      android:layout_centerHorizontal="true"
-      android:src="@drawable/ic_baseline_person_24"
-      app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-      android:id="@+id/txt_name"
+    <androidx.appcompat.widget.LinearLayoutCompat
+      android:id="@+id/linearLayout_balance"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@+id/img_profile"
-      android:layout_marginTop="16dp"
-      android:text="@string/txt_name_user"
-      android:textStyle="bold"
-      android:textSize="18sp"
-      android:gravity="center_horizontal"/>
-
-    <TextView
-      android:id="@+id/txt_username"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/txt_name"
-      android:text="@string/txt_username"
-      android:textSize="16sp"
-      android:gravity="center_horizontal"/>
-
-    <androidx.cardview.widget.CardView
-      android:id="@+id/cv_saldo"
-      android:layout_width="100dp"
-      android:layout_height="30dp"
-      android:padding="16dp"
-      android:layout_margin="8dp"
-      app:cardCornerRadius="6dp"
-      app:cardElevation="3dp"
-      android:layout_below="@id/txt_username"
-      android:layout_centerHorizontal="true">
+      android:background="@color/soft_grey"
+      android:gravity="center"
+      android:orientation="vertical"
+      android:padding="@dimen/default_space">
 
       <TextView
-        android:id="@+id/txt_title"
+        android:id="@+id/saldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/saldo"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+      <TextView
+        android:id="@+id/txt_saldo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:text="@string/txt_price_stuff"
+        android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold"
-        tools:text="@string/saldo"/>
-    </androidx.cardview.widget.CardView>
+        android:textStyle="bold" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
       android:id="@+id/history_trans"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_below="@id/cv_saldo"
-      android:layout_marginTop="30dp"
+      android:layout_below="@id/linearLayout_balance"
       android:layout_marginStart="20dp"
+      android:layout_marginTop="30dp"
       android:text="@string/history_trans"
       android:textSize="16sp"
       android:textStyle="bold" />
@@ -77,10 +54,10 @@
       android:id="@+id/rv_history_trans"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_marginTop="8dp"
       android:layout_below="@id/history_trans"
+      android:layout_marginTop="8dp"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      tools:listitem="@layout/item_history_trans"/>
+      tools:listitem="@layout/item_history_trans" />
 
   </RelativeLayout>
 </ScrollView>

@@ -19,7 +19,7 @@
         android:value=".ui.LandingActivity" />
     </activity>
     <activity android:name=".ui.profile.withdraw.WithdrawActivity" />
-    <activity android:name=".ui.scan.OrderActivity" />
+    <activity android:name="id.junkman.ui.sell.confirmation.SellConfirmationActivity" />
     <activity android:name=".ui.profile.historytrans.HistoryTransActivity" />
     <activity android:name=".ui.profile.editprofile.EditProfileActivity" />
     <activity android:name=".ui.transaction.TransactionActivity">
