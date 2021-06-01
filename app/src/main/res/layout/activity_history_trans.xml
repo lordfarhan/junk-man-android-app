@@ -1,63 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context=".ui.profile.historytrans.HistoryTransActivity">
 
-  <RelativeLayout
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/linearLayout_balance"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-      android:id="@+id/linearLayout_balance"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/soft_grey"
-      android:gravity="center"
-      android:orientation="vertical"
-      android:padding="@dimen/default_space">
-
-      <TextView
-        android:id="@+id/saldo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/saldo"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-      <TextView
-        android:id="@+id/txt_saldo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_price_stuff"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    android:layout_height="wrap_content"
+    android:background="@color/soft_grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_space">
 
     <TextView
-      android:id="@+id/history_trans"
+      android:id="@+id/saldo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/saldo"
+      android:textAlignment="center"
+      android:textSize="20sp"
+      android:textStyle="bold" />
+
+    <TextView
+      android:id="@+id/txt_saldo"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_below="@id/linearLayout_balance"
-      android:layout_marginStart="20dp"
-      android:layout_marginTop="30dp"
-      android:text="@string/history_trans"
+      android:text="Rp0"
+      android:textAlignment="center"
       android:textSize="16sp"
       android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/rv_history_trans"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_below="@id/history_trans"
-      android:layout_marginTop="8dp"
-      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      tools:listitem="@layout/item_history_trans" />
+  </androidx.appcompat.widget.LinearLayoutCompat>
 
-  </RelativeLayout>
-</ScrollView>
+  <TextView
+    android:id="@+id/history_trans"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/linearLayout_balance"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="30dp"
+    android:text="@string/history_trans"
+    android:textSize="16sp"
+    android:textStyle="bold" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_history_trans"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/history_trans"
+    android:layout_marginTop="8dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:listitem="@layout/item_history_trans" />
+
+  <ProgressBar
+    android:id="@+id/progress_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true" />
+
+</RelativeLayout>

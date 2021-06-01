@@ -40,8 +40,6 @@ class ShopFragment : Fragment() {
     store = Firebase.firestore
 
     requestProducts()
-    productSearching()
-
   }
 
   private fun requestProducts() {
@@ -59,6 +57,7 @@ class ShopFragment : Fragment() {
           }
         }
         populateProducts()
+        productSearching()
       }
   }
 

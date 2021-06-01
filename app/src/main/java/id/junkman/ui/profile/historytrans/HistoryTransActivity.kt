@@ -10,6 +10,8 @@ import com.google.firebase.ktx.Firebase
 import id.junkman.R
 import id.junkman.databinding.ActivityHistoryTransBinding
 import id.junkman.model.Balance
+import id.junkman.utils.gone
+import id.junkman.utils.visible
 
 class HistoryTransActivity : AppCompatActivity() {
   private lateinit var binding: ActivityHistoryTransBinding
@@ -17,6 +19,7 @@ class HistoryTransActivity : AppCompatActivity() {
   private lateinit var store: FirebaseFirestore
   private lateinit var balances: ArrayList<Balance>
   private lateinit var adapter: HistoryTransAdapter
+  private var balance = 0.0
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -27,16 +30,19 @@ class HistoryTransActivity : AppCompatActivity() {
     store = Firebase.firestore
 
     auth.currentUser?.let {
+      binding.progressBar.visible()
       balances = ArrayList()
       store.collection("Users").document(it.uid)
         .collection("Balance")
         .get()
         .addOnSuccessListener { documents ->
+          binding.progressBar.gone()
           for ((i, document) in documents.withIndex()) {
             if (document.exists()) {
-              val balance: Balance = document.toObject(Balance::class.java)
-              balance.id = document.id
-              balances.add(balance)
+              val bal: Balance = document.toObject(Balance::class.java)
+              bal.id = document.id
+              balances.add(bal)
+              balance += bal.amount
             }
           }
           populateHistories()
@@ -46,6 +52,7 @@ class HistoryTransActivity : AppCompatActivity() {
   }
 
   private fun populateHistories() {
+    binding.txtSaldo.text = String.format("Rp%.0f", balance)
     adapter = HistoryTransAdapter()
     binding.rvHistoryTrans.adapter = adapter
     adapter.submitList(balances)

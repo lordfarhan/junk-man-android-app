@@ -2,6 +2,7 @@ package id.junkman.ui.profile.historytrans
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,8 @@ import id.junkman.App
 import id.junkman.R
 import id.junkman.databinding.ItemHistoryTransBinding
 import id.junkman.model.Balance
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.math.abs
 
 /**
@@ -21,12 +24,19 @@ class HistoryTransAdapter : ListAdapter<Balance, HistoryTransAdapter.ViewHolder>
     fun bind(balance: Balance) {
       binding.transRp.text = String.format("Rp%.0f", abs(balance.amount))
       if (balance.amount > 0) {
-        binding.txtTypeTrans.text = App.getContext().resources.getString(R.string.type_trans_income)
+        binding.txtTypeTrans.text =
+          App.getContext().resources.getString(R.string.type_trans_income)
+        binding.txtTypeTrans.setTextColor(ContextCompat.getColor(App.getContext(), R.color.green))
       } else {
         binding.txtTypeTrans.text =
           App.getContext().resources.getString(R.string.type_trans_outcome)
+        binding.txtTypeTrans.setTextColor(ContextCompat.getColor(App.getContext(), R.color.red))
       }
-      binding.txtDateTrans.text = balance.timestamp
+      val formatter = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.US)
+      val date = balance.timestamp?.toDate()
+      date?.let {
+        binding.txtDateTrans.text = formatter.format(it)
+      }
     }
   }
 
