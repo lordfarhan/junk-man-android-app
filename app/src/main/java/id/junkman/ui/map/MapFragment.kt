@@ -40,7 +40,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    _binding = FragmentMapBinding.inflate(layoutInflater, container, false)
+    _binding = FragmentMapBinding.inflate(inflater, container, false)
     return binding.root
   }
 
