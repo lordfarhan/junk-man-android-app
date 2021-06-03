@@ -11,7 +11,7 @@ import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import id.junkman.databinding.ActivitySellBinding
-import id.junkman.ml.Modelbarulagi
+import id.junkman.ml.Junkman
 import id.junkman.ui.sell.confirmation.SellConfirmationActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
@@ -94,7 +94,7 @@ class SellActivity : AppCompatActivity() {
     val townList = inputString.split("\n")
 
     val resized: Bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
-    val model = Modelbarulagi.newInstance(this)
+    val model = Junkman.newInstance(this)
 
     // Creates inputs for reference.
     val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
@@ -137,12 +137,12 @@ class SellActivity : AppCompatActivity() {
   private fun getMax(arr: FloatArray): Int {
     var ind = 0
     var min = 0.0f
-    for (i in 0..5) {
+    for (i in 0..4) {
       if (arr[i] > min) {
         ind = i
         min = arr[i]
       }
     }
-    return ind + 1
+    return ind
   }
 }
