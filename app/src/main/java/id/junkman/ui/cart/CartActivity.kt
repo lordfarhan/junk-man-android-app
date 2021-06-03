@@ -1,16 +1,29 @@
 package id.junkman.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import id.junkman.R
 import id.junkman.data.source.local.entity.CartItem
 import id.junkman.databinding.ActivityCartBinding
 import id.junkman.model.Product
+import id.junkman.ui.transaction.TransactionActivity
+import id.junkman.utils.gone
 import id.junkman.utils.invisible
+import id.junkman.utils.visible
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CartActivity : AppCompatActivity() {
+  private lateinit var auth: FirebaseAuth
+  private lateinit var firestore: FirebaseFirestore
+
   private lateinit var binding: ActivityCartBinding
   private lateinit var adapter: ShoppingCartAdapter
   private lateinit var cartItems: ArrayList<CartItem>
@@ -25,16 +38,20 @@ class CartActivity : AppCompatActivity() {
     binding = ActivityCartBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
+    auth = Firebase.auth
+    firestore = Firebase.firestore
+
     setActionBar()
     adapter = ShoppingCartAdapter()
     binding.recyclerCart.layoutManager = LinearLayoutManager(this)
     binding.recyclerCart.adapter = adapter
 
     if (intent.hasExtra(PRODUCT)) {
-      cartItems = ArrayList()
+      val mCartItems: ArrayList<CartItem> = ArrayList()
       val productCart = intent.getParcelableExtra<Product>(PRODUCT) as Product
       val cartItem = CartItem(
         productCart.id,
+        productCart.category,
         productCart.name,
         productCart.price,
         productCart.image,
@@ -42,15 +59,11 @@ class CartActivity : AppCompatActivity() {
         1,
         productCart.unit
       )
-      cartItems.add(cartItem)
+      mCartItems.add(cartItem)
       addToCart()
     }
 
     showCartItems()
-
-    binding.btnOrder.setOnClickListener {
-      showBottomDialog()
-    }
   }
 
   private fun addToCart() {
@@ -61,13 +74,57 @@ class CartActivity : AppCompatActivity() {
   private fun showCartItems() {
     viewModel.getCartItems().observe(this, {
       if (it != null && it.isNotEmpty()) {
+        cartItems = ArrayList()
+        cartItems.clear()
+
         binding.progressBar.invisible()
         adapter.submitList(it)
         adapter.onAddBtnCartClick = { selectedCart -> addQuantity(selectedCart) }
         adapter.onMinBtnCartClick = { selectedCart -> minQuantity(selectedCart) }
         adapter.notifyDataSetChanged()
+
+        for (cart in it) {
+          cartItems.add(cart)
+        }
+        setConfirmButton(cartItems)
       }
     })
+  }
+
+  private fun setConfirmButton(mCartItems: ArrayList<CartItem>) {
+    binding.btnOrder.setOnClickListener {
+      binding.progressBar.visible()
+      for ((i, cart) in mCartItems.withIndex()) {
+        val data = hashMapOf(
+          "category" to cart.category,
+          "image" to cart.image,
+          "name" to cart.name,
+          "price" to (cart.price?.times(cart.quantity)),
+          "quantity" to cart.quantity,
+          "status" to "waiting",
+          "type" to "buying",
+          "unit" to cart.unit,
+          "userId" to auth.currentUser!!.uid
+        )
+        firestore.collection("Transactions").add(data)
+          .addOnSuccessListener {
+            if (i == mCartItems.size - 1) {
+              binding.progressBar.gone()
+              viewModel.emptyCart()
+
+              Toast.makeText(this, "Tunggu konfirmasi JunkMan, yaa!", Toast.LENGTH_SHORT)
+                .show()
+              val intent = Intent(this, TransactionActivity::class.java)
+              startActivity(intent)
+            }
+          }
+          .addOnFailureListener {
+            binding.progressBar.gone()
+            Toast.makeText(this, "Upps, ada kesalahan nih!", Toast.LENGTH_SHORT)
+              .show()
+          }
+      }
+    }
   }
 
   private fun addQuantity(cartItem: CartItem) {
@@ -89,6 +146,6 @@ class CartActivity : AppCompatActivity() {
 
   private fun showBottomDialog() {
     val bottomCartFragment = BottomCartFragment()
-    bottomCartFragment.show(supportFragmentManager, "withdraw")
+    bottomCartFragment.show(supportFragmentManager, "checkout")
   }
 }

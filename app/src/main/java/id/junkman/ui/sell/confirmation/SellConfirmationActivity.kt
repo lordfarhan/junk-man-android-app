@@ -81,7 +81,7 @@ class SellConfirmationActivity : AppCompatActivity() {
         binding.progressBarSellConfirm.visible()
         val mName = binding.txtNameStuff.text.toString()
         val data = hashMapOf(
-          "category" to name,
+          "category" to name.toLowerCase(),
           "image" to "",
           "name" to mName,
           "price" to incomeEstimation,

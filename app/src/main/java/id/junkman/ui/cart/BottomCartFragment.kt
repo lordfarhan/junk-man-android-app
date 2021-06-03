@@ -8,11 +8,17 @@ import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import id.junkman.databinding.FragmentBottomCartBinding
 
-class BottomCartFragment : BottomSheetDialogFragment() {
+class BottomCartFragment() :
+  BottomSheetDialogFragment() {
+
   private var _binding: FragmentBottomCartBinding? = null
   private val binding get() = _binding!!
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
     _binding = FragmentBottomCartBinding.inflate(inflater, container, false)
     return binding.root
   }

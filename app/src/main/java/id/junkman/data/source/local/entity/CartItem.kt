@@ -14,6 +14,7 @@ import kotlinx.parcelize.Parcelize
 data class CartItem(
   @PrimaryKey
   var id: String = "",
+  var category: String = "",
   var name: String? = "",
   var price: Double? = 0.0,
   var image: String? = "",
