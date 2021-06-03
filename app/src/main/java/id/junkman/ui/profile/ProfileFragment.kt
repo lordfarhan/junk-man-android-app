@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,6 +13,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import id.junkman.databinding.FragmentProfileBinding
+import id.junkman.model.Balance
 import id.junkman.model.User
 import id.junkman.ui.LoginActivity
 import id.junkman.ui.profile.editprofile.EditProfileActivity
@@ -31,6 +31,7 @@ class ProfileFragment : Fragment() {
   private val binding get() = _binding!!
   private lateinit var auth: FirebaseAuth
   private lateinit var store: FirebaseFirestore
+  private var balance = 0.0
 
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -60,6 +61,21 @@ class ProfileFragment : Fragment() {
       it.photoUrl?.let { url ->
         Picasso.get().load(url).into(binding.imgProfile)
       }
+    }
+
+    auth.currentUser?.let {
+      store.collection("Users").document(it.uid)
+        .collection("Balance")
+        .get()
+        .addOnSuccessListener { documents ->
+          for (document in documents) {
+            if (document.exists()) {
+              val bal: Balance = document.toObject(Balance::class.java)
+              balance += bal.amount
+            }
+          }
+          binding.txtTitle.text = String.format("Rp%.0f", balance)
+        }
     }
 
     binding.btnEditProfile.setOnClickListener {
