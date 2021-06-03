@@ -15,6 +15,16 @@
     android:layout_height="match_parent"
     android:padding="12dp">
 
+    <ImageButton
+      android:id="@+id/btn_cancel_cart"
+      android:layout_width="12dp"
+      android:layout_height="12dp"
+      android:src="@drawable/ic_close"
+      android:backgroundTint="@color/white"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:contentDescription="@string/image" />
+
     <ImageView
       android:id="@+id/img_stuff_cart"
       android:layout_width="70dp"
