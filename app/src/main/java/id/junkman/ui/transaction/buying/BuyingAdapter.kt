@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import id.junkman.R
 import id.junkman.databinding.ItemTransactionBinding
 import id.junkman.model.Transaction
 
-class BuyingAdapter: RecyclerView.Adapter<BuyingAdapter.ViewHolder> {
+class BuyingAdapter : RecyclerView.Adapter<BuyingAdapter.ViewHolder> {
   var onItemClick: ((Transaction) -> Unit)? = null
   private var list = mutableListOf<Transaction>()
 
@@ -34,8 +33,7 @@ class BuyingAdapter: RecyclerView.Adapter<BuyingAdapter.ViewHolder> {
       binding.apply {
         txtStuff.text = transaction.name
         txtStatusValue.text = transaction.status
-        txtStatus.setText(R.string.status)
-        txtBarcode.setText(R.string.open_barcode)
+        txtBarcode.text = transaction.id
         cvRoot.setOnClickListener {
           onItemClick?.invoke(transaction)
         }

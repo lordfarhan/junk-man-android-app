@@ -1,17 +1,19 @@
 package id.junkman.ui.transaction.buying
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import id.junkman.databinding.FragmentBuyingBinding
-import id.junkman.model.Product
 import id.junkman.model.Transaction
 import id.junkman.utils.gone
 import id.junkman.utils.visible
@@ -21,6 +23,7 @@ class BuyingFragment : Fragment() {
   private val binding get() = _binding!!
 
   private lateinit var store: FirebaseFirestore
+  private lateinit var auth: FirebaseAuth
   private lateinit var adapter: BuyingAdapter
   private lateinit var transactions: ArrayList<Transaction>
 
@@ -28,7 +31,11 @@ class BuyingFragment : Fragment() {
     fun newInstance() = BuyingFragment()
   }
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
     _binding = FragmentBuyingBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -36,6 +43,7 @@ class BuyingFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     store = Firebase.firestore
+    auth = Firebase.auth
 
     showListBuying()
   }
@@ -44,6 +52,8 @@ class BuyingFragment : Fragment() {
     binding.progressBar.visible()
     transactions = ArrayList()
     store.collection("Transactions")
+      .whereEqualTo("userId", auth.currentUser!!.uid)
+      .whereEqualTo("type", "buying")
       .get()
       .addOnSuccessListener { documents ->
         binding.progressBar.gone()
@@ -56,6 +66,10 @@ class BuyingFragment : Fragment() {
         }
         populateProducts()
       }
+      .addOnFailureListener {
+        binding.progressBar.gone()
+        Toast.makeText(requireContext(), "Upps, ada yang salah nih", Toast.LENGTH_SHORT).show()
+      }
   }
 
   private fun populateProducts() {
@@ -64,7 +78,7 @@ class BuyingFragment : Fragment() {
     binding.rvBuying.adapter = adapter
 
     binding.progressBar.visibility = View.INVISIBLE
-    adapter.onItemClick = { showBottomDialog() }
+//    adapter.onItemClick = { showBottomDialog() }
   }
 
   private fun showBottomDialog() {
