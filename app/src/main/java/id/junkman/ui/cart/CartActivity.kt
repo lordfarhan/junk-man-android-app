@@ -60,13 +60,13 @@ class CartActivity : AppCompatActivity() {
         productCart.unit
       )
       mCartItems.add(cartItem)
-      addToCart()
+      addToCart(mCartItems)
     }
 
     showCartItems()
   }
 
-  private fun addToCart() {
+  private fun addToCart(cartItems: ArrayList<CartItem>) {
     viewModel.cartItems.value = cartItems
     viewModel.addToCart()
   }
