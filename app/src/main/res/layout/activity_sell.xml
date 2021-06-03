@@ -6,61 +6,181 @@
   android:layout_height="match_parent"
   tools:context=".ui.sell.SellActivity">
 
-  <ImageView
-    android:id="@+id/imageView"
-    android:layout_width="275dp"
-    android:layout_height="230dp"
-    app:layout_constraintBottom_toBottomOf="parent"
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView_captured"
+    android:layout_width="match_parent"
+    android:layout_height="360dp"
+    android:layout_margin="@dimen/default_space"
+    app:cardCornerRadius="@dimen/default_card_corner_radius"
+    app:cardElevation="@dimen/default_card_elevation"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.144"
-    tools:srcCompat="@tools:sample/avatars" />
+    app:layout_constraintTop_toTopOf="parent">
 
-  <Button
-    android:id="@+id/button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="60dp"
-    android:layout_marginEnd="108dp"
-    android:text="Select"
-    android:textSize="20sp"
-    app:layout_constraintEnd_toStartOf="@+id/button2"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <ImageView
+      android:id="@+id/imageView_captured"
+      android:layout_width="match_parent"
+      android:layout_height="360dp"
+      android:scaleType="centerCrop"
+      tools:srcCompat="@tools:sample/avatars" />
 
-  <Button
-    android:id="@+id/button2"
-    android:layout_width="wrap_content"
+  </androidx.cardview.widget.CardView>
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView_classCategory"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="60dp"
-    android:layout_marginEnd="32dp"
-    android:text="Predict"
-    android:textSize="20sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageView" />
-  <Button
-    android:id="@+id/button3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Take Camera"
-    app:layout_constraintBottom_toTopOf="@+id/textView"
-    app:layout_constraintEnd_toStartOf="@+id/button2"
-    app:layout_constraintHorizontal_bias="0.484"
-    app:layout_constraintStart_toEndOf="@+id/button"
-    app:layout_constraintTop_toBottomOf="@+id/imageView"
-    app:layout_constraintVertical_bias="0.0" />
+    android:layout_margin="@dimen/default_space"
+    app:cardCornerRadius="@dimen/default_card_corner_radius"
+    app:cardElevation="@dimen/default_card_elevation"
+    app:layout_constraintTop_toBottomOf="@id/cardView_captured">
+
+    <EditText
+      android:id="@+id/editText_classCategory"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/medium_space"
+      android:background="@android:color/transparent"
+      android:hint="Kategori" />
+
+  </androidx.cardview.widget.CardView>
+
   <TextView
-    android:id="@+id/textView"
-    android:layout_width="276dp"
-    android:layout_height="153dp"
-    android:text="Select And Predict"
-    android:textSize="20sp"
+    android:id="@+id/textView_wrongCategory"
+    style="@style/Theme.JunkMan.Caption"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_space"
+    android:text="@string/wrong_category"
+    android:textColor="@color/red"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/cardView_classCategory" />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView_classCategoryPrice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_space"
+    app:cardCornerRadius="@dimen/default_card_corner_radius"
+    app:cardElevation="@dimen/default_card_elevation"
+    app:layout_constraintTop_toBottomOf="@id/textView_wrongCategory">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/medium_space"
+      android:text="Rp"
+      android:textSize="18sp"
+      android:textStyle="bold" />
+
+    <EditText
+      android:id="@+id/editText_classCategoryPrice"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/large_space"
+      android:layout_marginTop="@dimen/medium_space"
+      android:layout_marginEnd="@dimen/medium_space"
+      android:layout_marginBottom="@dimen/medium_space"
+      android:background="@android:color/transparent"
+      android:hint="0" />
+
+  </androidx.cardview.widget.CardView>
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/fab_gallery"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_space"
+    android:backgroundTint="@color/green_500"
+    android:contentDescription="Gallery"
+    android:gravity="center"
+    android:src="@drawable/ic_baseline_photo_library_24"
+    android:text="@string/gallery"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="@id/fab_camera"
+    app:layout_constraintEnd_toStartOf="@id/fab_camera"
+    app:layout_constraintTop_toTopOf="@id/fab_camera"
+    app:tint="@color/white" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab_camera"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/large_space"
+    android:backgroundTint="@color/green_500"
+    android:contentDescription="Take Camera"
+    android:src="@drawable/ic_baseline_camera_24"
+    app:fabSize="normal"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    app:tint="@color/white" />
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/fab_next"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/default_space"
+    android:backgroundTint="@color/green_500"
+    android:contentDescription="Predict"
+    android:gravity="center"
+    android:src="@drawable/ic_baseline_navigate_next_24"
+    android:text="@string/next"
+    android:textAllCaps="false"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="@id/fab_camera"
+    app:layout_constraintStart_toEndOf="@id/fab_camera"
+    app:layout_constraintTop_toTopOf="@id/fab_camera"
+    app:tint="@color/white" />
+
+  <!--  <Button-->
+  <!--    android:id="@+id/button"-->
+  <!--    android:layout_width="wrap_content"-->
+  <!--    android:layout_height="wrap_content"-->
+  <!--    android:layout_marginStart="32dp"-->
+  <!--    android:layout_marginTop="60dp"-->
+  <!--    android:layout_marginEnd="108dp"-->
+  <!--    android:text="Select"-->
+  <!--    android:textSize="20sp"-->
+  <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+  <!--    app:layout_constraintEnd_toStartOf="@+id/button2"-->
+  <!--    app:layout_constraintStart_toStartOf="parent" />-->
+
+  <!--  <Button-->
+  <!--    android:id="@+id/button2"-->
+  <!--    android:layout_width="wrap_content"-->
+  <!--    android:layout_height="wrap_content"-->
+  <!--    android:layout_marginTop="60dp"-->
+  <!--    android:layout_marginEnd="32dp"-->
+  <!--    android:text="Predict"-->
+  <!--    android:textSize="20sp"-->
+  <!--    app:layout_constraintEnd_toEndOf="parent"-->
+  <!--    app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+
+  <!--  <Button-->
+  <!--    android:id="@+id/button3"-->
+  <!--    android:layout_width="wrap_content"-->
+  <!--    android:layout_height="wrap_content"-->
+  <!--    android:text="Take Camera"-->
+  <!--    app:layout_constraintBottom_toTopOf="@+id/textView"-->
+  <!--    app:layout_constraintEnd_toStartOf="@+id/button2"-->
+  <!--    app:layout_constraintHorizontal_bias="0.484"-->
+  <!--    app:layout_constraintStart_toEndOf="@+id/button"-->
+  <!--    app:layout_constraintTop_toBottomOf="@+id/imageView"-->
+  <!--    app:layout_constraintVertical_bias="0.0" />-->
+
+  <!--  <TextView-->
+  <!--    android:id="@+id/textView"-->
+  <!--    android:layout_width="276dp"-->
+  <!--    android:layout_height="153dp"-->
+  <!--    android:text="Select And Predict"-->
+  <!--    android:textSize="20sp"-->
+  <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+  <!--    app:layout_constraintEnd_toEndOf="parent"-->
+  <!--    app:layout_constraintHorizontal_bias="0.5"-->
+  <!--    app:layout_constraintStart_toStartOf="parent"-->
+  <!--    app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

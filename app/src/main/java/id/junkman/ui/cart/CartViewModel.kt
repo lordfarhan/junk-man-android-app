@@ -23,11 +23,11 @@ class CartViewModel(private val repository: AppRepository) : ViewModel() {
   }
 
   fun increaseItemQuantity(cartItem: CartItem) {
-    repository.updateItemQuantity(cartItem.id, cartItem.quantity!! + 1)
+    repository.updateItemQuantity(cartItem.id, cartItem.quantity + 1)
   }
 
   fun decreaseItemQuantity(cartItem: CartItem) {
-    repository.updateItemQuantity(cartItem.id, cartItem.quantity!! - 1)
+    repository.updateItemQuantity(cartItem.id, cartItem.quantity - 1)
   }
 
 }

@@ -49,7 +49,7 @@ class ShopFragment : Fragment() {
       .get()
       .addOnSuccessListener { documents ->
         binding.progressBar.gone()
-        for ((i, document) in documents.withIndex()) {
+        for (document in documents) {
           if (document.exists()) {
             val product: Product = document.toObject(Product::class.java)
             product.id = document.id

@@ -47,7 +47,7 @@ class BuyingFragment : Fragment() {
       .get()
       .addOnSuccessListener { documents ->
         binding.progressBar.gone()
-        for ((i, document) in documents.withIndex()) {
+        for (document in documents) {
           if (document.exists()) {
             val transaction: Transaction = document.toObject(Transaction::class.java)
             transaction.id = document.id
@@ -69,10 +69,8 @@ class BuyingFragment : Fragment() {
 
   private fun showBottomDialog() {
     val myDialog = BottomDialogBuyingFragment()
-    val fm: FragmentManager? = fragmentManager
-    if (fm != null) {
-      myDialog.show(fm, "buying")
-    }
+    val fm: FragmentManager = childFragmentManager
+    myDialog.show(fm, "buying")
   }
 
   override fun onDestroyView() {

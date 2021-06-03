@@ -25,7 +25,7 @@ interface AppDao {
       if (!itemExists(item.id)) {
         insertItem(item)
       } else {
-        item.quantity?.let { updateItemQuantity(item.id, it + 1) }
+        updateItemQuantity(item.id, item.quantity + 1)
       }
     }
   }

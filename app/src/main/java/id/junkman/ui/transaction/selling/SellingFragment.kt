@@ -1,10 +1,10 @@
 package id.junkman.ui.transaction.selling
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import id.junkman.databinding.FragmentSellingBinding
 
@@ -12,7 +12,11 @@ class SellingFragment : Fragment() {
   private var _binding: FragmentSellingBinding? = null
   private val binding get() = _binding!!
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
     _binding = FragmentSellingBinding.inflate(inflater, container, false)
     return binding.root
   }
@@ -26,10 +30,8 @@ class SellingFragment : Fragment() {
 
   private fun showBottomDialog() {
     val myDialog = BottomDialogSellingFragment()
-    val fm: FragmentManager? = fragmentManager
-    if (fm != null) {
-      myDialog.show(fm, "buying")
-    }
+    val fm: FragmentManager = childFragmentManager
+    myDialog.show(fm, "buying")
   }
 
   override fun onDestroyView() {

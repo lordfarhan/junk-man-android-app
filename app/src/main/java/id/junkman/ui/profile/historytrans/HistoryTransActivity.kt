@@ -37,7 +37,7 @@ class HistoryTransActivity : AppCompatActivity() {
         .get()
         .addOnSuccessListener { documents ->
           binding.progressBar.gone()
-          for ((i, document) in documents.withIndex()) {
+          for (document in documents) {
             if (document.exists()) {
               val bal: Balance = document.toObject(Balance::class.java)
               bal.id = document.id
