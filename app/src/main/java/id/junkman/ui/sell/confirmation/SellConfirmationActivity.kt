@@ -55,7 +55,7 @@ class SellConfirmationActivity : AppCompatActivity() {
     }
 
     binding.imgStuffOrder.setImageBitmap(image)
-    binding.nameStuff.text = name
+    binding.categoryStuff.text = name
     binding.txtPriceInfo.text = String.format("Rp%d", price)
 
     binding.txtWeightStuffPredict.addTextChangedListener(object : TextWatcher {

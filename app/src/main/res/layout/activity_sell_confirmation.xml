@@ -42,7 +42,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
-    android:text="Kategori"
+    android:text="@string/categori"
     android:textAlignment="center"
     android:textSize="18sp"
     android:textStyle="bold"
@@ -54,28 +54,41 @@
     android:id="@+id/name_stuff"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Nama Produk"
+    android:text="@string/name_product"
     android:textAlignment="textStart"
     android:textSize="16sp"
+    android:textStyle="bold"
     android:layout_marginTop="20dp"
     android:layout_marginStart="20dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/category_stuff"/>
+
+  <TextView
+    android:id="@+id/equal1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/equal"
+    android:textAlignment="textStart"
+    android:textSize="16sp"
+    android:layout_marginStart="10dp"
+    app:layout_constraintStart_toEndOf="@id/price_stuff_info"
+    app:layout_constraintTop_toTopOf="@id/name_stuff"/>
 
   <EditText
     android:id="@+id/txt_name_stuff"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:autofillHints="Nama"
-    android:inputType="text"
     android:labelFor="@id/txt_name_stuff"
-    android:textAlignment="textEnd"
+    android:textAlignment="textStart"
     android:textSize="16sp"
     android:layout_marginEnd="20dp"
+    android:layout_marginStart="20dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="@id/txt_weight_stuff_predict"
+    app:layout_constraintStart_toEndOf="@id/equal1"
     app:layout_constraintTop_toTopOf="@id/name_stuff"
-    app:layout_constraintBottom_toBottomOf="@id/name_stuff"/>
+    app:layout_constraintBottom_toBottomOf="@id/name_stuff"
+    android:inputType="text" />
 
   <TextView
     android:id="@+id/price_stuff_info"
@@ -90,16 +103,26 @@
     app:layout_constraintTop_toBottomOf="@id/name_stuff"/>
 
   <TextView
+    android:id="@+id/equal2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/equal"
+    android:textAlignment="textStart"
+    android:textSize="16sp"
+    android:layout_marginStart="10dp"
+    app:layout_constraintStart_toEndOf="@id/price_stuff_info"
+    app:layout_constraintTop_toTopOf="@id/price_stuff_info"/>
+
+  <TextView
     android:id="@+id/txt_price_info"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/initial_price"
     android:textAlignment="textEnd"
     android:textSize="16sp"
+    android:textStyle="bold"
     android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/price_stuff_info"
+    app:layout_constraintStart_toEndOf="@id/equal2"
     app:layout_constraintTop_toTopOf="@id/price_stuff_info"
     app:layout_constraintBottom_toBottomOf="@id/price_stuff_info"/>
 
@@ -110,10 +133,22 @@
     android:text="@string/weight_predict"
     android:textAlignment="textStart"
     android:textSize="16sp"
+    android:textStyle="bold"
     android:layout_marginTop="20dp"
     android:layout_marginStart="20dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/price_stuff_info"/>
+
+  <TextView
+    android:id="@+id/equal3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/equal"
+    android:textAlignment="textStart"
+    android:textSize="16sp"
+    android:layout_marginStart="10dp"
+    app:layout_constraintStart_toEndOf="@id/price_stuff_info"
+    app:layout_constraintTop_toTopOf="@id/weight_predict"/>
 
   <EditText
     android:id="@+id/txt_weight_stuff_predict"
@@ -122,12 +157,12 @@
     android:autofillHints="Berapa Kg?"
     android:inputType="number"
     android:labelFor="@id/txt_weight_stuff_predict"
-    android:textAlignment="textEnd"
+    android:textAlignment="textStart"
     android:textSize="16sp"
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/weight_predict"
+    app:layout_constraintStart_toEndOf="@id/equal3"
     app:layout_constraintTop_toTopOf="@id/weight_predict"
     app:layout_constraintBottom_toBottomOf="@id/weight_predict"/>
 
@@ -144,16 +179,26 @@
     app:layout_constraintTop_toBottomOf="@id/weight_predict"/>
 
   <TextView
+    android:id="@+id/equal4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/equal"
+    android:textAlignment="textStart"
+    android:textSize="16sp"
+    android:layout_marginStart="10dp"
+    app:layout_constraintStart_toEndOf="@id/price_stuff_info"
+    app:layout_constraintTop_toTopOf="@id/est_price"/>
+
+  <TextView
     android:id="@+id/txt_est_price"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/initial_price"
     android:textAlignment="textEnd"
     android:textSize="16sp"
+    android:textStyle="bold"
     android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/est_price"
+    app:layout_constraintStart_toEndOf="@id/equal4"
     app:layout_constraintTop_toTopOf="@id/est_price"
     app:layout_constraintBottom_toBottomOf="@id/est_price"/>
 
