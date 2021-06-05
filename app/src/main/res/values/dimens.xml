@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <dimen name="default_button_height">52dp</dimen>
-  <dimen name="default_card_elevation">6dp</dimen>
+  <dimen name="default_card_elevation">4dp</dimen>
   <dimen name="default_card_corner_radius">10dp</dimen>
 
   <dimen name="no_space">0dp</dimen>
