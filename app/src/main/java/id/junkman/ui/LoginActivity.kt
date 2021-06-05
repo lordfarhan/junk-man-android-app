@@ -97,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
   }
 
   private fun redirectToLanding(user: FirebaseUser) {
-    Toast.makeText(this, "Welcome " + user.displayName, Toast.LENGTH_SHORT).show()
+    Toast.makeText(this, "Selamat datang", Toast.LENGTH_SHORT).show()
     startActivity(Intent(this, LandingActivity::class.java))
     finish()
   }
@@ -111,10 +111,15 @@ class LoginActivity : AppCompatActivity() {
       "role" to "customer"
     )
 
-    store.collection("Users").document(user.uid).set(data);
-    Toast.makeText(this, "Registering user...", Toast.LENGTH_SHORT).show()
-
-    redirectToLanding(user)
+    Toast.makeText(this, "Mendaftarkan user...", Toast.LENGTH_SHORT).show()
+    store.collection("Users").document(user.uid).set(data)
+      .addOnSuccessListener {
+        Toast.makeText(this, "Berhasil didaftarkan!", Toast.LENGTH_SHORT).show()
+        redirectToLanding(user)
+      }
+      .addOnFailureListener {
+        Toast.makeText(this, "Gagal melakukan pendaftaran", Toast.LENGTH_SHORT).show()
+      }
   }
 
   companion object {
