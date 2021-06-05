@@ -29,6 +29,10 @@
     <item name="fontFamily">@font/cabin_semi_bold</item>
   </style>
 
+  <style name="Theme.JunkMan.Subtitle" parent="TextAppearance.AppCompat.Subhead">
+    <item name="fontFamily">@font/cabin_semi_bold</item>
+  </style>
+
   <style name="Theme.JunkMan.Caption" parent="TextAppearance.AppCompat.Caption">
     <item name="fontFamily">@font/cabin_regular</item>
   </style>

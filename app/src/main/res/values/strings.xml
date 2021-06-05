@@ -2,10 +2,10 @@
   <string name="app_name">JunkMan</string>
   <string name="splash_screen">Splash Screen</string>
 
-  <string name="app_intro_skip_button">LEWATI</string>
-  <string name="app_intro_next_button">LANJUT</string>
-  <string name="app_intro_back_button">KEMBALI</string>
-  <string name="app_intro_done_button">SELESAI</string>
+  <string name="app_intro_skip_button">Lewati</string>
+  <string name="app_intro_next_button">Lanjut</string>
+  <string name="app_intro_back_button">Kembali</string>
+  <string name="app_intro_done_button">Selesai</string>
   <string name="app_intro_image_content_description">Icon</string>
 
   <string name="title">JunkMan</string>
@@ -74,16 +74,18 @@
   <string name="amount_trans_200">Rp 200.000</string>
   <string name="bank_name">Nama Bank</string>
   <string name="input_bank_name">Masukkan Nama Bank</string>
-  <string name="bank_number">No. Rekening</string>
-  <string name="input_bank_number">Masukkan No. Rekening</string>
-  <string name="send">AMBIL</string>
+  <string name="account_name">Nama Akun</string>
+  <string name="input_account_name">Masukkan Nama Akun</string>
+  <string name="account_number">No. Rekening</string>
+  <string name="input_account_number">Masukkan No. Rekening</string>
+  <string name="send">Ambil</string>
 
   <string name="amount_withdraw">Jumlah Penarikan</string>
   <string name="amount_admin">Biaya Administrasi</string>
   <string name="amount_admin_5">Rp 5.000</string>
   <string name="amount_total">Total Biaya</string>
   <string name="amount_total_55">Rp 55.000</string>
-  <string name="confirm">KONFIRMASI</string>
+  <string name="confirm">Konfirmasi</string>
 
   <string name="floating_button">floating button</string>
   <string name="stuff_price_kg">Rp 5.000/Kg</string>
