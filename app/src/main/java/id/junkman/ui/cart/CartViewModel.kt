@@ -30,6 +30,10 @@ class CartViewModel(private val repository: AppRepository) : ViewModel() {
     repository.updateItemQuantity(cartItem.id, cartItem.quantity - 1)
   }
 
+  fun deleteItem(cartItem: CartItem) {
+    repository.removeItem(cartItem.id)
+  }
+
   fun emptyCart() {
     repository.removeItems()
   }

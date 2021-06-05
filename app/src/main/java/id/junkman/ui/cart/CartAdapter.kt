@@ -14,6 +14,7 @@ class ShoppingCartAdapter :
 
   var onMinBtnCartClick: ((CartItem) -> Unit)? = null
   var onAddBtnCartClick: ((CartItem) -> Unit)? = null
+  var onDeleteBtnCartClick: ((CartItem) -> Unit)? = null
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
     ViewHolder(ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -37,6 +38,9 @@ class ShoppingCartAdapter :
         }
         btnAddCart.setOnClickListener {
           onAddBtnCartClick?.invoke(cartItem)
+        }
+        btnCancelCart.setOnClickListener {
+          onDeleteBtnCartClick?.invoke(cartItem)
         }
       }
     }

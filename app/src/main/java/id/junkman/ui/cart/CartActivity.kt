@@ -81,6 +81,7 @@ class CartActivity : AppCompatActivity() {
         adapter.submitList(it)
         adapter.onAddBtnCartClick = { selectedCart -> addQuantity(selectedCart) }
         adapter.onMinBtnCartClick = { selectedCart -> minQuantity(selectedCart) }
+        adapter.onDeleteBtnCartClick = { selectedCart -> deleteItem(selectedCart) }
         adapter.notifyDataSetChanged()
 
         for (cart in it) {
@@ -130,11 +131,18 @@ class CartActivity : AppCompatActivity() {
   private fun addQuantity(cartItem: CartItem) {
     if (cartItem.quantity < cartItem.stock)
       viewModel.increaseItemQuantity(cartItem)
+    adapter.notifyDataSetChanged()
   }
 
   private fun minQuantity(cartItem: CartItem) {
     if (cartItem.quantity > 1)
       viewModel.decreaseItemQuantity(cartItem)
+    adapter.notifyDataSetChanged()
+  }
+
+  private fun deleteItem(cartItem: CartItem) {
+    viewModel.deleteItem(cartItem)
+    adapter.notifyDataSetChanged()
   }
 
   private fun setActionBar() {
