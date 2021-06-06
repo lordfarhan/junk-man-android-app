@@ -2,8 +2,9 @@ package id.junkman.ui.sell.confirmation
 
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
@@ -48,8 +49,8 @@ class SellConfirmationActivity : AppCompatActivity() {
     if (intent.hasExtra(NAME) && intent.hasExtra(PRICE) && intent.hasExtra(IMAGE)) {
       name = intent.getStringExtra(NAME).toString()
       price = intent.getIntExtra(PRICE, 0)
-      val byteArray = intent.getByteArrayExtra(IMAGE)
-      image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
+      val uri = intent.getStringExtra(IMAGE)
+      image = MediaStore.Images.Media.getBitmap(this.contentResolver, Uri.parse(uri))
     } else {
       onBackPressed()
     }

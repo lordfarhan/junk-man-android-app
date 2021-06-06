@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
@@ -37,6 +38,8 @@ class CameraActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivityCameraBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     // Request camera permissions
     if (allPermissionsGranted()) {
@@ -184,6 +187,13 @@ class CameraActivity : AppCompatActivity() {
     private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
     private const val REQUEST_CODE_PERMISSIONS = 10
     private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      android.R.id.home -> onBackPressed()
+    }
+    return super.onOptionsItemSelected(item)
   }
 
 }

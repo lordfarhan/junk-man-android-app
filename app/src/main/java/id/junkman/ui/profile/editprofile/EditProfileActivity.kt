@@ -1,6 +1,7 @@
 package id.junkman.ui.profile.editprofile
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -61,8 +62,15 @@ class EditProfileActivity : AppCompatActivity() {
 
   private fun setActionBar() {
     supportActionBar?.apply {
-//      setDisplayHomeAsUpEnabled(true)
+      setDisplayHomeAsUpEnabled(true)
       title = resources.getString(R.string.edit_profil)
     }
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      android.R.id.home -> onBackPressed()
+    }
+    return super.onOptionsItemSelected(item)
   }
 }

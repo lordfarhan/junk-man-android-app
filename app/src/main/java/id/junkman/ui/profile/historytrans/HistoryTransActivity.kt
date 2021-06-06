@@ -1,6 +1,7 @@
 package id.junkman.ui.profile.historytrans
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -60,9 +61,15 @@ class HistoryTransActivity : AppCompatActivity() {
 
   private fun setActionBar() {
     supportActionBar?.apply {
-//      setDisplayHomeAsUpEnabled(true)
+      setDisplayHomeAsUpEnabled(true)
       title = resources.getString(R.string.history_trans)
     }
+  }
 
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      android.R.id.home -> onBackPressed()
+    }
+    return super.onOptionsItemSelected(item)
   }
 }

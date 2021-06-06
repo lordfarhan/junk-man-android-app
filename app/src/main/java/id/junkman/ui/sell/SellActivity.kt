@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import id.junkman.databinding.ActivitySellBinding
@@ -16,11 +17,11 @@ import id.junkman.ui.sell.confirmation.SellConfirmationActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.io.ByteArrayOutputStream
 
 class SellActivity : AppCompatActivity() {
   private lateinit var binding: ActivitySellBinding
   private lateinit var bitmap: Bitmap
+  private var uri: Uri? = null
   private var category = ""
   private var price = 0
 
@@ -28,6 +29,8 @@ class SellActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivitySellBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     binding.fabGallery.setOnClickListener {
       val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -41,15 +44,13 @@ class SellActivity : AppCompatActivity() {
     }
 
     binding.fabNext.setOnClickListener {
-      val bStream = ByteArrayOutputStream()
-      bitmap.compress(Bitmap.CompressFormat.PNG, 100, bStream)
-      val byteArray = bStream.toByteArray()
-
-      val intent = Intent(this, SellConfirmationActivity::class.java)
-      intent.putExtra(SellConfirmationActivity.NAME, category)
-      intent.putExtra(SellConfirmationActivity.PRICE, price)
-      intent.putExtra(SellConfirmationActivity.IMAGE, byteArray)
-      startActivity(intent)
+      uri?.let {
+        val intent = Intent(this, SellConfirmationActivity::class.java)
+        intent.putExtra(SellConfirmationActivity.NAME, category)
+        intent.putExtra(SellConfirmationActivity.PRICE, price)
+        intent.putExtra(SellConfirmationActivity.IMAGE, uri.toString())
+        startActivity(intent)
+      }
     }
 
     binding.textViewWrongCategory.setOnClickListener {
@@ -74,13 +75,8 @@ class SellActivity : AppCompatActivity() {
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
-    if (requestCode == 100) {
-      binding.imageViewCaptured.setImageURI(data?.data)
-      val uri: Uri? = data?.data
-      bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
-      predict()
-    } else if (requestCode == 101) {
-      val uri: Uri? = data?.data
+    if (resultCode == RESULT_OK && (requestCode == 100 || requestCode == 101)) {
+      uri = data?.data
       bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
       binding.imageViewCaptured.setImageBitmap(bitmap)
       predict()
@@ -145,5 +141,12 @@ class SellActivity : AppCompatActivity() {
       }
     }
     return ind
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      android.R.id.home -> onBackPressed()
+    }
+    return super.onOptionsItemSelected(item)
   }
 }
