@@ -36,7 +36,8 @@ class SellActivity : AppCompatActivity() {
     }
 
     binding.fabCamera.setOnClickListener {
-      val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//      val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+      val intent = Intent(this, CameraActivity::class.java)
       startActivityForResult(intent, 101)
     }
 
@@ -80,7 +81,8 @@ class SellActivity : AppCompatActivity() {
       bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
       predict()
     } else if (requestCode == 101) {
-      bitmap = data?.extras?.get("data") as Bitmap
+      val uri: Uri? = data?.data
+      bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
       binding.imageViewCaptured.setImageBitmap(bitmap)
       predict()
     }

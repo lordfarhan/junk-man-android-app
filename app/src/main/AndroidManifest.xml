@@ -4,6 +4,11 @@
 
   <uses-permission android:name="android.permission.INTERNET" />
 
+  <uses-feature android:name="android.hardware.camera.autofocus" />
+  <uses-feature android:name="android.hardware.camera.any" />
+
+  <uses-permission android:name="android.permission.CAMERA" />
+
   <application
     android:name=".App"
     android:allowBackup="true"
@@ -12,14 +17,15 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.JunkMan">
-    <activity android:name=".ui.sell.SellActivity"></activity>
+    <activity android:name=".ui.sell.CameraActivity"></activity>
+    <activity android:name=".ui.sell.SellActivity" />
     <activity android:name=".ui.cart.CartActivity">
       <meta-data
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".ui.LandingActivity" />
     </activity>
     <activity android:name=".ui.profile.withdraw.WithdrawActivity" />
-    <activity android:name="id.junkman.ui.sell.confirmation.SellConfirmationActivity" />
+    <activity android:name=".ui.sell.confirmation.SellConfirmationActivity" />
     <activity android:name=".ui.profile.historytrans.HistoryTransActivity" />
     <activity android:name=".ui.profile.editprofile.EditProfileActivity" />
     <activity android:name=".ui.transaction.TransactionActivity">
@@ -27,8 +33,9 @@
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".ui.LandingActivity" />
     </activity>
-    <activity android:name=".ui.WelcomeActivity"
-      android:theme="@style/Theme.JunkMan.NoActionBar"/>
+    <activity
+      android:name=".ui.WelcomeActivity"
+      android:theme="@style/Theme.JunkMan.NoActionBar" />
     <activity android:name=".ui.LoginActivity" />
     <activity android:name=".ui.LandingActivity" />
     <activity
