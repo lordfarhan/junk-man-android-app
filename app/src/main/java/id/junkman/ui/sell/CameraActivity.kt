@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
@@ -39,8 +38,6 @@ class CameraActivity : AppCompatActivity() {
     binding = ActivityCameraBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     // Request camera permissions
     if (allPermissionsGranted()) {
       startCamera()
@@ -51,11 +48,18 @@ class CameraActivity : AppCompatActivity() {
     }
 
     // Set up the listener for take photo button
-    binding.cameraCaptureButton.setOnClickListener { takePhoto() }
+    binding.fabCamera.setOnClickListener { takePhoto() }
 
     outputDirectory = getOutputDirectory()
 
     cameraExecutor = Executors.newSingleThreadExecutor()
+
+    binding.fabBack.setOnClickListener { onBackPressed() }
+    binding.fabGallery.setOnClickListener {
+      val intent = Intent()
+      setResult(201, intent)
+      finish()
+    }
   }
 
   private fun takePhoto() {
@@ -188,12 +192,4 @@ class CameraActivity : AppCompatActivity() {
     private const val REQUEST_CODE_PERMISSIONS = 10
     private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
   }
-
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-    when (item.itemId) {
-      android.R.id.home -> onBackPressed()
-    }
-    return super.onOptionsItemSelected(item)
-  }
-
 }

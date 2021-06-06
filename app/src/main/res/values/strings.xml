@@ -113,5 +113,6 @@
   <string name="initial_price">Rp0</string>
   <string name="name_product">Nama Produk</string>
   <string name="categori">Kategori</string>
+  <string name="cancel">Batal</string>
 
 </resources>

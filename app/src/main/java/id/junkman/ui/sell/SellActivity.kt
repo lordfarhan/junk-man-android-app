@@ -10,6 +10,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import id.junkman.databinding.ActivitySellBinding
 import id.junkman.ml.Junkman
@@ -33,23 +34,23 @@ class SellActivity : AppCompatActivity() {
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     binding.fabGallery.setOnClickListener {
-      val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
-      intent.type = "image/*"
-      startActivityForResult(intent, 100)
+      openGallery()
     }
 
     binding.fabCamera.setOnClickListener {
-      val intent = Intent(this, CameraActivity::class.java)
-      startActivityForResult(intent, 101)
+      startCamera()
     }
 
     binding.fabNext.setOnClickListener {
-      uri?.let {
+      if (uri != null && category.isNotEmpty() && price != 0) {
         val intent = Intent(this, SellConfirmationActivity::class.java)
         intent.putExtra(SellConfirmationActivity.NAME, category)
         intent.putExtra(SellConfirmationActivity.PRICE, price)
         intent.putExtra(SellConfirmationActivity.IMAGE, uri.toString())
         startActivity(intent)
+      } else {
+        Toast.makeText(this, "Mohon memilih gambar, dan form dengan lengkap.", Toast.LENGTH_SHORT)
+          .show()
       }
     }
 
@@ -71,6 +72,19 @@ class SellActivity : AppCompatActivity() {
         getPrice(s.toString())
       }
     })
+
+    startCamera()
+  }
+
+  private fun startCamera() {
+    val intent = Intent(this, CameraActivity::class.java)
+    startActivityForResult(intent, 101)
+  }
+
+  private fun openGallery() {
+    val intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
+    intent.type = "image/*"
+    startActivityForResult(intent, 100)
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -80,6 +94,8 @@ class SellActivity : AppCompatActivity() {
       bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
       binding.imageViewCaptured.setImageBitmap(bitmap)
       predict()
+    } else if (requestCode == 101 && resultCode == 201) {
+      openGallery()
     }
   }
 

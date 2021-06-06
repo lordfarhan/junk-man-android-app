@@ -17,7 +17,9 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.JunkMan">
-    <activity android:name=".ui.sell.CameraActivity"></activity>
+    <activity
+      android:name=".ui.sell.CameraActivity"
+      android:theme="@style/Theme.JunkMan.NoActionBar" />
     <activity android:name=".ui.sell.SellActivity" />
     <activity android:name=".ui.cart.CartActivity">
       <meta-data

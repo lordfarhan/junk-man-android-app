@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -41,6 +42,8 @@ class SellConfirmationActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivitySellConfirmationBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     storage = Firebase.storage
     firestore = Firebase.firestore
@@ -141,6 +144,13 @@ class SellConfirmationActivity : AppCompatActivity() {
   private fun getIncomeEstimation() {
     incomeEstimation = (price * weight).roundToInt()
     binding.txtEstPrice.text = String.format("Rp%d", incomeEstimation)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      android.R.id.home -> onBackPressed()
+    }
+    return super.onOptionsItemSelected(item)
   }
 
   companion object {
