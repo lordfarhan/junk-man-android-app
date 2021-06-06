@@ -44,7 +44,6 @@ android {
         viewBinding true
         mlModelBinding true
     }
-    dynamicFeatures = [':junkman']
 }
 
 dependencies {
