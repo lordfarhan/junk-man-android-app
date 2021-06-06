@@ -88,27 +88,10 @@ class CameraActivity : AppCompatActivity() {
 
           val intent = Intent()
           intent.data = savedUri
-//          intent.putExtra("data", savedUri)
           setResult(Activity.RESULT_OK, intent)
           finish()
         }
       })
-
-//    imageCapture.takePicture(cameraExecutor, object :
-//      ImageCapture.OnImageCapturedCallback() {
-//      override fun onCaptureSuccess(image: ImageProxy) {
-//
-//        Toast.makeText(this@CameraActivity, "Successfully captured.", Toast.LENGTH_SHORT).show()
-//
-//        val bitmap = imageProxyToBitmap(image)
-//        val intent = Intent()
-//        intent.putExtra("data", bitmap)
-//        setResult(Activity.RESULT_OK, intent)
-//        finish()
-//
-//        super.onCaptureSuccess(image)
-//      }
-//    })
   }
 
   private fun startCamera() {

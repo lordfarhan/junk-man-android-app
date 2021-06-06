@@ -36,7 +36,6 @@ class SellActivity : AppCompatActivity() {
     }
 
     binding.fabCamera.setOnClickListener {
-//      val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
       val intent = Intent(this, CameraActivity::class.java)
       startActivityForResult(intent, 101)
     }
