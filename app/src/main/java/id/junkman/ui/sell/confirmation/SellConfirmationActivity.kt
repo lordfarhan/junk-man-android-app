@@ -22,6 +22,7 @@ import id.junkman.ui.transaction.TransactionActivity
 import id.junkman.utils.gone
 import id.junkman.utils.visible
 import java.io.ByteArrayOutputStream
+import java.util.*
 import kotlin.math.roundToInt
 
 
@@ -85,7 +86,7 @@ class SellConfirmationActivity : AppCompatActivity() {
         binding.progressBarSellConfirm.visible()
         val mName = binding.txtNameStuff.text.toString()
         val data = hashMapOf(
-          "category" to name.toLowerCase(),
+          "category" to name.lowercase(Locale.getDefault()),
           "image" to "",
           "name" to mName,
           "price" to incomeEstimation,

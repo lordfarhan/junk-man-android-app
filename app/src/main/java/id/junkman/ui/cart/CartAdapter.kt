@@ -47,7 +47,7 @@ class ShoppingCartAdapter :
   }
 }
 
-class DiffCallback() : DiffUtil.ItemCallback<CartItem>() {
+class DiffCallback : DiffUtil.ItemCallback<CartItem>() {
   override fun areItemsTheSame(oldItem: CartItem, newItem: CartItem): Boolean =
     oldItem == newItem
 

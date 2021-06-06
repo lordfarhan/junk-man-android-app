@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import id.junkman.databinding.FragmentBottomCartBinding
 
-class BottomCartFragment() :
+class BottomCartFragment :
   BottomSheetDialogFragment() {
 
   private var _binding: FragmentBottomCartBinding? = null

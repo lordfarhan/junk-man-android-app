@@ -39,7 +39,7 @@ class SellingAdapter : ListAdapter<Transaction, SellingAdapter.ViewHolder>(DiffC
   }
 }
 
-class DiffCallback() : DiffUtil.ItemCallback<Transaction>() {
+class DiffCallback : DiffUtil.ItemCallback<Transaction>() {
   override fun areItemsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
     return oldItem == newItem
   }

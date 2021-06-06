@@ -2,10 +2,6 @@
   <string name="app_name">JunkMan</string>
   <string name="splash_screen">Splash Screen</string>
 
-  <string name="app_intro_skip_button">Lewati</string>
-  <string name="app_intro_next_button">Lanjut</string>
-  <string name="app_intro_back_button">Kembali</string>
-  <string name="app_intro_done_button">Selesai</string>
   <string name="app_intro_image_content_description">Icon</string>
 
   <string name="title">JunkMan</string>
@@ -13,9 +9,7 @@
   <string name="desc2">Silahkan scan barang bekas anda dan tunggu JunkMan kami datang!</string>
   <string name="desc3">Anda juga dapat membeli barang bekas yang anda butuhkan pada toko kami</string>
   <string name="desc4">Selamat Datang di JunkMan! Solusi Barang Bekas mu!</string>
-  <string name="welcome">Welcome!</string>
 
-  <string name="card">Card Slider</string>
   <string name="card1">One Man\'s Trash is Another Man\'s Treasure.</string>
   <string name="card2">Recycling Turns Things Into Other Things. Which is Like Magic!</string>
   <string name="card3">Use It Up, Wear It Out, Make It Do, or Do Without.</string>
@@ -32,12 +26,8 @@
   <string name="sell">Penjualan</string>
   <string name="buy">Pembelian</string>
   <string name="ic_eye">Icon Eye</string>
-  <string name="show_barcode">Lihat Barcode</string>
   <string name="status">Status</string>
   <string name="status_wait">Menunggu</string>
-  <string name="status_progress">Dikonfirmasi</string>
-  <string name="status_done">Sukses</string>
-  <string name="status_failed">Batal</string>
 
   <string name="open_barcode">Lihat Barcode</string>
   <string name="barcode">Tunjukkan barcode dibawah ini ke JunkMan, yaa!</string>
@@ -70,8 +60,6 @@
   <string name="trans_date">20/05/2021</string>
   <string name="amount_trans">Pilih Jumlah Penarikan :</string>
   <string name="amount_trans_50">Rp 50.000</string>
-  <string name="amount_trans_100">Rp 100.000</string>
-  <string name="amount_trans_200">Rp 200.000</string>
   <string name="bank_name">Nama Bank</string>
   <string name="input_bank_name">Masukkan Nama Bank</string>
   <string name="account_name">Nama Akun</string>
@@ -89,23 +77,18 @@
 
   <string name="floating_button">floating button</string>
   <string name="stuff_price_kg">Rp 5.000/Kg</string>
-  <string name="price">Harga</string>
   <string name="stuff_weight_bottle">300ml</string>
   <string name="button">button</string>
   <string name="order">PESAN</string>
-  <string name="price_weight">Harga/Kg</string>
   <string name="txt_stuff_quantity">2</string>
   <string name="shopping_cart">Keranjang Belanja</string>
   <string name="note_bottom_cart">*Transaksi dilakukan dengan COD</string>
   <string name="amount_cart">Jumlah Pembelian</string>
 
-  <string name="name_stuff_doesnt_match">Jika nama barang yang tampil tidak sesuai, silahkan masukkan nama barang di bawah ini :</string>
   <string name="equal">:</string>
-  <string name="kg">Kg</string>
   <string name="est_price">Estimasi Pendapatan</string>
   <string name="weight_predict">Estimasi Berat (per Kg)</string>
   <string name="price_stuff_info">Informasi Harga (per Kg)</string>
-  <string name="title_junkman">Junkman</string>
 
   <string name="wrong_category">Wrong Category?</string>
   <string name="gallery">Gallery</string>

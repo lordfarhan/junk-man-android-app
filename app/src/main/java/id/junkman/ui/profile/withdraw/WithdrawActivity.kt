@@ -122,7 +122,4 @@ class WithdrawActivity : AppCompatActivity() {
     bottomWithdrawFragment.show(supportFragmentManager, "withdraw")
   }
 
-  override fun onDestroy() {
-    super.onDestroy()
-  }
 }

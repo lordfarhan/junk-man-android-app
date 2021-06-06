@@ -55,7 +55,7 @@ class HistoryTransAdapter : ListAdapter<Balance, HistoryTransAdapter.ViewHolder>
   }
 }
 
-class DiffCallback() : DiffUtil.ItemCallback<Balance>() {
+class DiffCallback : DiffUtil.ItemCallback<Balance>() {
   override fun areItemsTheSame(oldItem: Balance, newItem: Balance): Boolean {
     return oldItem == newItem
   }
