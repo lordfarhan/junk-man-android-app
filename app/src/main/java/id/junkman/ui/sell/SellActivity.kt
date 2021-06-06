@@ -130,18 +130,13 @@ class SellActivity : AppCompatActivity() {
   }
 
   private fun getPrice(category: String) {
-    if (category.equals("Cardboard", true)) {
-      price = 800
-    } else if (category.equals("Glass", true)) {
-      price = 1000
-    } else if (category.equals("Metal", true)) {
-      price = 2000
-    } else if (category.equals("Paper", true)) {
-      price = 1500
-    } else if (category.equals("Plastic", true)) {
-      price = 1500
-    } else {
-      price = 0
+    price = when {
+      category.equals("Cardboard", true) -> 800
+      category.equals("Glass", true) -> 1000
+      category.equals("Metal", true) -> 2000
+      category.equals("Paper", true) -> 1500
+      category.equals("Plastic", true) -> 1500
+      else -> 0
     }
 
     binding.editTextClassCategoryPrice.setText(price.toString())
